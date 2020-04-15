@@ -34,6 +34,18 @@ const routes: Routes = [
   {
     path: 'crear-rutinas',
     loadChildren: () => import('./pages/crear-rutinas/crear-rutinas.module').then( m => m.CrearRutinasPageModule)
+  },
+  {
+    path: 'info-user',
+    loadChildren: () => import('./pages/info-user/info-user.module').then( m => m.InfoUserPageModule)
+  },
+  {
+    path: 'amigos',
+    loadChildren: () => import('./pages/amigos/amigos.module').then( m => m.AmigosPageModule)
+  },
+  {
+    path: 'estadisticas',
+    loadChildren: () => import('./pages/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
   }
 ];
 @NgModule({

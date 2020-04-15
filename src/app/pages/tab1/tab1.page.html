@@ -1,7 +1,42 @@
-<app-header titulo="Perfil"></app-header>
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button color="light" menu="first"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Perfil</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="exit" color="danger" class="salida" (click)="logout()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
 
 
 <ion-content>
+
+    <ion-grid fixed>
+
+        <ion-row>
+            <ion-col class="ion-text-center ion-padding ion-margin">
+                <img src="/assets/gym-near.svg" alt="">
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-list>
+
+        <ion-item [routerLink]="['/info-user']" detail>
+            <ion-label>Ajustes de la Cuenta</ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/amigos']" detail>
+            <ion-label>Amigos</ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/estadisticas']" detail>
+            <ion-label>Estadísticas con mas detalle</ion-label>
+        </ion-item>
+
+    </ion-list>
 
 
 </ion-content>
