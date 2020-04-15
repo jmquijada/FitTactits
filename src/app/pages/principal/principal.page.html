@@ -1,0 +1,49 @@
+<app-header titulo="Principal"></app-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card class="ppal ion-text-center ion-padding" color="light">
+          <ion-icon name="fitness-outline"></ion-icon>
+          <h2>Resumen</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card class="ppal ion-text-center ion-padding" color="primary"  [routerLink]="['/main/tabs/tab3']">
+          <ion-icon name="barbell-outline"></ion-icon>
+          <h2>Tus Rutinas</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card class="ppal ion-text-center ion-padding" color="danger"  [routerLink]="['/main/tabs/tab2']">
+          <ion-icon src="/assets/food.svg"></ion-icon>
+          <h2>Alimentación</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card class="ppal ion-text-center ion-padding" color="tertiary"  [routerLink]="['/main/tabs/tab4']">
+          <ion-icon name="bar-chart-outline"></ion-icon>
+          <h2>Progreso</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card class="ppal ion-text-center ion-padding" color="dark"  [routerLink]="['/main/tabs/tab1']">
+          <ion-icon name="person-outline"></ion-icon>
+          <h2>Perfil</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
