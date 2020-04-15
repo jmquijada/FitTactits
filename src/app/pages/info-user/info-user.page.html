@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/main/tabs/tab1"></ion-back-button>
     </ion-buttons>
@@ -7,6 +7,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <img src="/assets/Captura.PNG" class="ion-text-center" alt="">
+  <form>
+    <ion-row>
+      <ion-col>
+
+        <ion-list>
+
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input name="email"
+                       type="email"
+                       required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input name="nombre"
+                       type="text"
+                       required></ion-input>
+          </ion-item>
+
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button type="submit"
+                    color="dark">
+          Actualizar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
 
 </ion-content>
