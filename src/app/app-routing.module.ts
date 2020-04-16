@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {CargarAlimentoService} from './services/cargar-alimento.service';
 
 const routes: Routes = [
   {
@@ -49,7 +50,9 @@ const routes: Routes = [
   },
   {
     path: 'alimento/:id',
-    loadChildren: () => import('./pages/alimento/alimento.module').then( m => m.AlimentoPageModule)
+    loadChildren: () => import('./pages/alimento/alimento.module').then( m => m.AlimentoPageModule), resolve: {
+      alimento: CargarAlimentoService
+    }
   }
 ];
 @NgModule({
