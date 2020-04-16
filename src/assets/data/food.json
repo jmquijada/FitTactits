@@ -1,0 +1,32 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Donuts",
+    "calorías": 225
+  },
+  {
+    "id": 2,
+    "name": "Pizza",
+    "calorías": 225
+  },
+  {
+    "id": 3,
+    "name": "Tomate",
+    "calorías": 22
+  },
+  {
+    "id": 4,
+    "name": "Queso",
+    "calorías": 225
+  },
+  {
+    "id": 5,
+    "name": "Queso Fresco",
+    "calorías": 2
+  },
+  {
+    "id": 6,
+    "name": "Jalapeños",
+    "calorías": 225
+  }
+]

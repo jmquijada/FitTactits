@@ -1,12 +1,30 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DataService} from '../../services/data.service';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+    selector: 'app-tab2',
+    templateUrl: 'tab2.page.html',
+    styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
 
-  constructor() {}
+    alimentos: any[] = [];
+    textoBuscar = '';
+    @Input() alimento: any;
+
+    constructor(private dataService: DataService) {
+    }
+
+    buscar(event) {
+        this.textoBuscar = event.detail.value;
+        // console.log(event);
+    }
+
+    ngOnInit() {
+        this.dataService.getAlimentacion()
+            .subscribe(food => {
+                this.alimentos = food;
+            });
+    }
 
 }

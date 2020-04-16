@@ -9,7 +9,8 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ComponentsModule} from './components/components.module';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import {PipesModule} from './pipes/pipes.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -19,7 +20,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
         IonicModule.forRoot(),
         AppRoutingModule,
         ComponentsModule,
-        HttpClientModule
+        HttpClientModule,
+        PipesModule
     ],
     providers: [
         StatusBar,
