@@ -9,7 +9,7 @@
     "hidratos_de_carbono_azucares": 3,
     "proteinas": 6.1,
     "sal": 1,
-    "foto": "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+    "foto": "/assets/alimentos/donuts.jpg"
   },
   {
     "id": 2,
@@ -20,7 +20,8 @@
     "hidratos_de_carbono": 52,
     "hidratos_de_carbono_azucares": 4.5,
     "proteinas": 7.5,
-    "sal": 0
+    "sal": 0,
+    "foto": "/assets/alimentos/pan.jpg"
   },
   {
     "id": 3,
@@ -31,7 +32,8 @@
     "hidratos_de_carbono": 70,
     "hidratos_de_carbono_azucares": 2.9,
     "proteinas": 12,
-    "sal": 0.028
+    "sal": 0.028,
+    "foto": "/assets/alimentos/pasta.jpg"
   },
   {
     "id": 4,

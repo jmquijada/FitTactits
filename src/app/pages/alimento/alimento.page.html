@@ -1,21 +1,57 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Alimento</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/main/tabs/tab2"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{alimento.name.toLocaleUpperCase()}}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
-  <ion-card>
-    <img [src]="foto" alt="">
-    <ion-card-header>
-      <ion-card-title>{{alimento.name}}</ion-card-title>
-    </ion-card-header>
+    <ion-card>
+        <img src="{{alimento.foto}}" alt="">
+        <ion-card-header>
+            <ion-card-title>{{alimento.name}}</ion-card-title>
+        </ion-card-header>
 
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-    </ion-card-content>
-  </ion-card>
+        <ion-card-content class="ion-padding">
+          <ion-list>
+            <ion-item>
+              <h2 slot="start" style="font-weight: bold">Valor Nutricional: </h2>
+              <h2 slot="end">por 100 gramos</h2>
+            </ion-item>
+            <ion-item>
+              <h2 slot="start"> Calorías: </h2>
+              <p slot="end">{{alimento.calorias}} g</p>
+            </ion-item>
+            <ion-item>
+              <h2 slot="start">Grasas: </h2>
+              <p slot="end">{{alimento.grasas}} g</p>
+            </ion-item>
+            <ion-item>
+              <h2 slot="start"> - de las cuales saturadas: </h2>
+              <p slot="end">{{alimento.grasas_saturadas}} g</p>
+            </ion-item>
+            <ion-item>
+              <h2 slot="start">Hidratos de Carbono: </h2>
+              <p slot="end">{{alimento.hidratos_de_carbono}} g</p>
+            </ion-item>
+            <ion-item>
+              <h2 slot="start"> - de los cuales azúcares: </h2>
+              <p slot="end">{{alimento.hidratos_de_carbono_azucares}} g</p>
+            </ion-item>
+            <ion-item>
+              <h2 slot="start"> Proteínas: </h2>
+              <p slot="end">{{alimento.proteinas}} g</p>
+            </ion-item>
+            <ion-item>
+              <h2 slot="start"> Sal: </h2>
+              <p slot="end">{{alimento.sal}} g</p>
+            </ion-item>
+
+          </ion-list>
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>
