@@ -8,7 +8,8 @@
     "hidratos_de_carbono": 42,
     "hidratos_de_carbono_azucares": 3,
     "proteinas": 6.1,
-    "sal": 1
+    "sal": 1,
+    "foto": "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
   },
   {
     "id": 2,

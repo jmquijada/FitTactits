@@ -6,15 +6,15 @@ import { IAlimento } from '../interfaces/interfaces';
 import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CargarAlimentoService implements Resolve<IAlimento[]> {
 
-  constructor(private dataService: DataService, private router: Router) { }
+    constructor(private dataService: DataService, private router: Router) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IAlimento[]> {
-    return this.dataService.getAlimento(route.params['id']);
-  }
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IAlimento[]> {
+        return this.dataService.getAlimento(route.params['id']);
+    }
 
 
 }

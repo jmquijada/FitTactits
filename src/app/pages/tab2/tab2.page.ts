@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from '../../services/data.service';
+import {IAlimento} from '../../interfaces/interfaces';
 
 @Component({
     selector: 'app-tab2',
@@ -10,7 +11,7 @@ export class Tab2Page implements OnInit {
 
     alimentos: any[] = [];
     textoBuscar = '';
-    @Input() alimento: any;
+    @Input() alimento: IAlimento;
 
     constructor(private dataService: DataService) {
     }
