@@ -15,7 +15,6 @@ export class CargarAlimentoService implements Resolve<any> {
 
     return this.dataService.getAlimento(route.params['id']).pipe(
         catchError(error => {
-          this.router.navigate(['/error']);
           return of(null);
         })
     );

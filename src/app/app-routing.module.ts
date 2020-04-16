@@ -50,9 +50,7 @@ const routes: Routes = [
   },
   {
     path: 'alimento/:id',
-    loadChildren: () => import('./pages/alimento/alimento.module').then( m => m.AlimentoPageModule), resolve: {
-      alimento: CargarAlimentoService
-    }
+    loadChildren: () => import('./pages/alimento/alimento.module').then( m => m.AlimentoPageModule)
   }
 ];
 @NgModule({
