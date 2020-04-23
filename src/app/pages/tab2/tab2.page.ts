@@ -18,13 +18,16 @@ export class Tab2Page implements OnInit {
 
     buscar(event) {
         this.textoBuscar = event.detail.value;
-        // console.log(event);
+        // console.log(event.detail.value);
+        // console.log(event.detail);
     }
 
     ngOnInit() {
         this.dataService.getAlimentacion()
             .subscribe(food => {
                 this.alimentos = food;
+                // console.log(food.length);
+                // console.log(this.alimentos);
             });
     }
 

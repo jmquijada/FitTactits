@@ -44,7 +44,8 @@
     "hidratos_de_carbono": 9.5,
     "hidratos_de_carbono_azucares": 9.5,
     "proteinas": 3.2,
-    "sal": 0.18
+    "sal": 0.18,
+    "foto": "/assets/alimentos/batido_choco.jpg"
   },
   {
     "id": 5,
@@ -55,7 +56,8 @@
     "hidratos_de_carbono": 10,
     "hidratos_de_carbono_azucares": 7.2,
     "proteinas": 1.5,
-    "sal": 1.5
+    "sal": 1.5,
+    "foto": "/assets/alimentos/tomate_frito.jpg"
   },
   {
     "id": 6,
@@ -66,7 +68,8 @@
     "hidratos_de_carbono": 0,
     "hidratos_de_carbono_azucares": 0,
     "proteinas": 1.4,
-    "sal": 4
+    "sal": 4,
+    "foto": "/assets/alimentos/aceitunas.jpg"
   },
   {
     "id": 7,
@@ -77,7 +80,8 @@
     "hidratos_de_carbono": 0.9,
     "hidratos_de_carbono_azucares": 0.5,
     "proteinas": 21,
-    "sal": 1.2
+    "sal": 1.2,
+    "foto": "/assets/alimentos/atun.webp"
   },
   {
     "id": 8,
@@ -88,7 +92,8 @@
     "hidratos_de_carbono": 5.1,
     "hidratos_de_carbono_azucares": 1.5,
     "proteinas": 0.5,
-    "sal": 0.74
+    "sal": 0.74,
+    "foto": "/assets/alimentos/mayonesa.jpg"
   },
   {
     "id": 9,
@@ -99,7 +104,8 @@
     "hidratos_de_carbono": 0.1,
     "hidratos_de_carbono_azucares": 0,
     "proteinas": 17.1,
-    "sal": 0.95
+    "sal": 0.95,
+    "foto": "/assets/alimentos/sardinillas.jpg"
   },
   {
     "id": 10,
@@ -110,7 +116,8 @@
     "hidratos_de_carbono": 58.4,
     "hidratos_de_carbono_azucares": 57.5,
     "proteinas": 6.3,
-    "sal": 0.16
+    "sal": 0.16,
+    "foto": "/assets/alimentos/chocolate.jpg"
   },
   {
     "id": 11,
@@ -121,7 +128,8 @@
     "hidratos_de_carbono": 4.8,
     "hidratos_de_carbono_azucares": 4.2,
     "proteinas": 0.5,
-    "sal": 0.1
+    "sal": 0.1,
+    "foto": "/assets/alimentos/zumo_melocoton.jpg"
   },
   {
     "id": 12,
@@ -132,7 +140,8 @@
     "hidratos_de_carbono": 6.3,
     "hidratos_de_carbono_azucares": 4.9,
     "proteinas": 0.2,
-    "sal": 0.01
+    "sal": 0.01,
+    "foto": "/assets/alimentos/zumo_piña.jpg"
   },
   {
     "id": 13,
@@ -143,7 +152,8 @@
     "hidratos_de_carbono": 79.2,
     "hidratos_de_carbono_azucares": 75.7,
     "proteinas": 5.1,
-    "sal": 0.37
+    "sal": 0.37,
+    "foto": "/assets/alimentos/nesquik.jpg"
   },
   {
     "id": 14,
@@ -154,7 +164,8 @@
     "hidratos_de_carbono": 73,
     "hidratos_de_carbono_azucares": 27,
     "proteinas": 5.8,
-    "sal": 0.58
+    "sal": 0.58,
+    "foto": "/assets/alimentos/choco_flakes.jpg"
   },
   {
     "id": 15,
@@ -165,7 +176,8 @@
     "hidratos_de_carbono": 68,
     "hidratos_de_carbono_azucares": 38,
     "proteinas": 5.4,
-    "sal": 0.74
+    "sal": 0.74,
+    "foto": "/assets/alimentos/oreo.jpg"
   },
   {
     "id": 16,
@@ -176,7 +188,8 @@
     "hidratos_de_carbono": 70,
     "hidratos_de_carbono_azucares": 31,
     "proteinas": 5.9,
-    "sal": 0.49
+    "sal": 0.49,
+    "foto": "/assets/alimentos/choco_guay.jpg"
   },
   {
     "id": 17,
@@ -187,7 +200,8 @@
     "hidratos_de_carbono": 10.6,
     "hidratos_de_carbono_azucares": 10.6,
     "proteinas": 0,
-    "sal": 0
+    "sal": 0,
+    "foto": "/assets/alimentos/cocacola.jpg"
   },
   {
     "id": 18,
@@ -198,7 +212,8 @@
     "hidratos_de_carbono": 77,
     "hidratos_de_carbono_azucares": 0,
     "proteinas": 6.7,
-    "sal": 0
+    "sal": 0,
+    "foto": "/assets/alimentos/arroz.jpg"
   },
   {
     "id": 19,
@@ -209,7 +224,8 @@
     "hidratos_de_carbono": 1.6,
     "hidratos_de_carbono_azucares": 0,
     "proteinas": 1.7,
-    "sal": 1
+    "sal": 1,
+    "foto": "/assets/alimentos/esparragos.jpg"
   },
   {
     "id": 20,
@@ -220,7 +236,8 @@
     "hidratos_de_carbono": 0,
     "hidratos_de_carbono_azucares": 0,
     "proteinas": 2.2,
-    "sal": 0.79
+    "sal": 0.79,
+    "foto": "/assets/alimentos/champi.jpg"
   },
   {
     "id": 21,
@@ -231,7 +248,8 @@
     "hidratos_de_carbono": 52.7,
     "hidratos_de_carbono_azucares": 0.7,
     "proteinas": 6.3,
-    "sal": 1.2
+    "sal": 1.2,
+    "foto": "/assets/alimentos/lays.jpg"
   },
   {
     "id": 22,
@@ -242,7 +260,8 @@
     "hidratos_de_carbono": 48.9,
     "hidratos_de_carbono_azucares": 5.2,
     "proteinas": 21,
-    "sal": 0.1
+    "sal": 0.1,
+    "foto": "/assets/alimentos/garbanzos.jpg"
   },
   {
     "id": 23,
@@ -253,7 +272,8 @@
     "hidratos_de_carbono": 52.4,
     "hidratos_de_carbono_azucares": 3.3,
     "proteinas": 24.9,
-    "sal": 0.02
+    "sal": 0.02,
+    "foto": "/assets/alimentos/lentejas.jpg"
   },
   {
     "id": 24,
@@ -264,7 +284,8 @@
     "hidratos_de_carbono": 49.5,
     "hidratos_de_carbono_azucares": 4.9,
     "proteinas": 22,
-    "sal": 0.02
+    "sal": 0.02,
+    "foto": "/assets/alimentos/alubias.jpg"
   },
   {
     "id": 25,
@@ -275,7 +296,8 @@
     "hidratos_de_carbono": 79.5,
     "hidratos_de_carbono_azucares": 60.9,
     "proteinas": 3.2,
-    "sal": 0.17
+    "sal": 0.17,
+    "foto": "/assets/alimentos/gomi.jpg"
   },
   {
     "id": 26,
@@ -286,7 +308,8 @@
     "hidratos_de_carbono": 3.9,
     "hidratos_de_carbono_azucares": 1.4,
     "proteinas": 21.3,
-    "sal": 1.5
+    "sal": 1.5,
+    "foto": "/assets/alimentos/pipas.jpg"
   },
   {
     "id": 27,
@@ -297,7 +320,8 @@
     "hidratos_de_carbono": 52.23,
     "hidratos_de_carbono_azucares": 0.1,
     "proteinas": 5.7,
-    "sal": 0.12
+    "sal": 0.12,
+    "foto": "/assets/alimentos/magdalena_sin.jpg"
   },
   {
     "id": 28,
@@ -308,7 +332,8 @@
     "hidratos_de_carbono": 50.93,
     "hidratos_de_carbono_azucares": 28.68,
     "proteinas": 5.16,
-    "sal": 0.23
+    "sal": 0.23,
+    "foto": "/assets/alimentos/magdalena.jpg"
   },
   {
     "id": 29,
@@ -319,18 +344,20 @@
     "hidratos_de_carbono": 72,
     "hidratos_de_carbono_azucares": 6.8,
     "proteinas": 12,
-    "sal": 1.1
+    "sal": 1.1,
+    "foto": "/assets/alimentos/biscotes.jpg"
   },
   {
     "id": 30,
-    "name": "Pan Bimbo - Sin Corteza",
+    "name": "Pan de Molde - Sin Corteza",
     "calorias": 250,
     "grasas": 2.5,
     "grasas_saturadas": 0.7,
     "hidratos_de_carbono": 46,
     "hidratos_de_carbono_azucares": 3.3,
     "proteinas": 9.2,
-    "sal": 0.91
+    "sal": 0.91,
+    "foto": "/assets/alimentos/pan_molde_sin_corteza.jpg"
   },
   {
     "id": 31,

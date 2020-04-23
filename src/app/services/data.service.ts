@@ -22,8 +22,6 @@ export class DataService {
     return this.http.get<any[]>('/assets/data/food.json');
   }
 
-  // OJO: retorna un Observable con un Array de una sola posicion
-  // el catchError no funciona
   getAlimento(id) {
     return this.http.get<any>('/assets/data/food.json').pipe(
       map(
