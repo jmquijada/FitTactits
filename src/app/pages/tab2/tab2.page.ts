@@ -10,22 +10,23 @@ import {IAlimento} from '../../interfaces/interfaces';
 export class Tab2Page implements OnInit {
 
     alimentos: any[] = [];
-    textoBuscar = '';
     @Input() alimento: IAlimento;
-
+    arrayfiltrado: any[] = this.alimentos.slice();
     constructor(private dataService: DataService) {
+
     }
 
     buscar(event) {
-        this.textoBuscar = event.detail.value;
-        // console.log(event.detail.value);
-        // console.log(event.detail);
+        this.arrayfiltrado = this.alimentos.filter(alimento => {
+            return alimento.name.toLowerCase().includes(event.detail.value);
+        });
     }
 
     ngOnInit() {
         this.dataService.getAlimentacion()
             .subscribe(food => {
                 this.alimentos = food;
+                this.arrayfiltrado = this.alimentos.slice();
                 // console.log(food.length);
                 // console.log(this.alimentos);
             });

@@ -6,15 +6,21 @@
         <ion-title>Alimentación</ion-title>
     </ion-toolbar>
 
+    <div class="centro card ion-text-center" style="width: 12rem;">
+        <img src="/assets/slides-principal/slide-3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">Información nutricional sobre una amplia variedad de productos</p>
+        </div>
+    </div>
+
     <ion-searchbar animated class="ion-margin-top"
                    (ionChange)="buscar($event)"></ion-searchbar>
-
 </ion-header>
 
 <ion-content class="ion-padding">
 
     <ion-list>
-        <ion-item *ngFor="let alimento of alimentos | filtroAlimento: textoBuscar"
+        <ion-item *ngFor="let alimento of arrayfiltrado"
                   detail [routerLink]="['/alimento', alimento.id]">
             {{alimento.name}}
         </ion-item>
