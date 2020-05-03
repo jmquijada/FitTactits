@@ -1,21 +1,8 @@
-<ion-header class="ion-no-border">
-    <ion-toolbar color="dark">
-        <ion-buttons slot="start">
-            <ion-menu-button color="light" menu="first"></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Alimentación</ion-title>
-    </ion-toolbar>
+<app-header titulo="Alimentacion"></app-header>
 
-    <div class="centro card ion-text-center" style="width: 12rem;">
-        <img src="/assets/slides-principal/slide-3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Información nutricional sobre una amplia variedad de productos</p>
-        </div>
-    </div>
+<ion-searchbar animated class="ion-margin-top"
+               (ionChange)="buscar($event)"></ion-searchbar>
 
-    <ion-searchbar animated class="ion-margin-top"
-                   (ionChange)="buscar($event)"></ion-searchbar>
-</ion-header>
 
 <ion-content class="ion-padding">
 
@@ -27,3 +14,17 @@
     </ion-list>
 
 </ion-content>
+
+<ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="alimento-fav" [routerLink]="['/main/tabs/alimento-fav']">
+        <ion-icon name="star"></ion-icon>
+        <ion-label>Alimentos Favoritos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="alimento-calc" [routerLink]="['/main/tabs/alimento-calc']">
+        <ion-icon name="calculator-outline"></ion-icon>
+        <ion-label>Calculadora Calorías</ion-label>
+    </ion-tab-button>
+
+</ion-tab-bar>

@@ -1,32 +1,56 @@
 ion-content ion-toolbar {
   --background: translucent;
+  margin: 0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 ion-slides {
   height: 100%;
+  width: 100%;
+}
+
+.inicio {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.texto-2{
+  font-family: 'Luckiest Guy', cursive;
+  margin: 0.2em 0;
+  color: #D92B2B;
+  font-size: 28px;
+}
+
+.texto {
+  font-family: 'Luckiest Guy', cursive;
+  color: #D92B2B;
+  font-size: 15px;
+  margin: 0;
+}
+
+.icono {
+  font-size: 20px;
+}
+
+img {
+  width: 100%;
 }
 
 .swiper-slide {
   display: block;
 }
 
-.swiper-slide h2 {
-  margin-top: 2rem;
-}
-
-b {
-  font-weight: 500;
+.swiper-slide img {
+  max-height: border-box;
+  pointer-events: none;
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--ion-color-step-600, #60646b);
 }
 
 p b {
   color: var(--ion-text-color, #000000);
-}
-
-.icono{
-  font-size: 50px;
 }

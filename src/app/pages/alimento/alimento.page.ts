@@ -1,9 +1,10 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import {Component, OnInit, AfterContentInit, Input} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IAlimento } from '../../interfaces/interfaces';
 import { isEmpty } from 'rxjs/operators';
-import { AlertController } from '@ionic/angular';
+import {ActionSheetController, AlertController} from '@ionic/angular';
+import {DataLocalService} from '../../services/data-local.service';
 
 @Component({
   selector: 'app-alimento',
@@ -14,8 +15,15 @@ export class AlimentoPage implements OnInit {
 
   idAlimento: number;
   alimento: IAlimento;
+  @Input() enFavoritos;
 
-  constructor(private route: ActivatedRoute, private router: Router, private title: Title, private alertCtrl: AlertController) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private actionSheetCtrl: ActionSheetController,
+              private datalocalService: DataLocalService,
+              private route: ActivatedRoute,
+              private router: Router,
+              private title: Title,
+              private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.idAlimento = this.route.snapshot.params['id'];
@@ -26,6 +34,47 @@ export class AlimentoPage implements OnInit {
     if (!this.alimento) {
       this.noExisteAlimento();
     }
+  }
+
+  async lanzarMenu() {
+
+    let guardarBorrarBtn;
+
+    if (this.enFavoritos) {
+      guardarBorrarBtn = {
+        text: 'Borrar Favorito',
+        icon: 'trash',
+        cssClass: 'action-dark',
+        handler: () => {
+          console.log('Borrar de favoritos');
+          this.datalocalService.borrarAlimento(this.alimento);
+        }
+      };
+    } else {
+      guardarBorrarBtn = {
+        text: 'Favorito',
+        icon: 'star',
+        cssClass: 'action-dark',
+        handler: () => {
+          console.log('Favorito');
+          this.datalocalService.guardarAlimento(this.alimento);
+        }
+      };
+    }
+    const actionSheet = await this.actionSheetCtrl.create({
+      buttons: [
+        guardarBorrarBtn,
+        {
+          text: 'Cancel',
+          icon: 'close',
+          cssClass: 'action-dark',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }]
+    });
+    await actionSheet.present();
   }
 
   async noExisteAlimento() {

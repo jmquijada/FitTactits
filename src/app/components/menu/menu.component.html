@@ -4,8 +4,10 @@
             <ion-title>Menú</ion-title>
         </ion-toolbar>
     </ion-header>
-    <ion-content>
-        <img src="/assets/Captura.PNG" class="someClass" alt="">
+    <ion-content style="background-color: #1a1a1a">
+        <div class="contain">
+            <video src="/assets/video-intro.mp4" autoplay loop muted class="vid"></video>
+        </div>
         <ion-list>
 
             <ion-menu-toggle *ngFor="let o of opciones | async">

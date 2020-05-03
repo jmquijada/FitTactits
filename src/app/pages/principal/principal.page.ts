@@ -31,6 +31,10 @@ export class PrincipalPage implements OnInit {
     startDate: Date;
     endDate: any;
 
+    opciones = {
+        slidesPerView: 1.3,
+    };
+
 
     constructor(private background: BackgroundMode,
                 private plt: Platform,

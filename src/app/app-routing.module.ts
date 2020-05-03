@@ -53,7 +53,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/alimento/alimento.module').then( m => m.AlimentoPageModule), resolve: {
       alimento: CargarAlimentoService
     }
+  },  {
+    path: 'alimento-calc',
+    loadChildren: () => import('./pages/alimento-calc/alimento-calc.module').then( m => m.AlimentoCalcPageModule)
+  },
+  {
+    path: 'alimento-fav',
+    loadChildren: () => import('./pages/alimento-fav/alimento-fav.module').then( m => m.AlimentoFavPageModule)
   }
+
 ];
 @NgModule({
   imports: [

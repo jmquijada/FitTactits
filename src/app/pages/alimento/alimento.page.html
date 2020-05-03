@@ -3,55 +3,65 @@
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/main/tabs/tab2"></ion-back-button>
         </ion-buttons>
-        <ion-title>{{alimento.name.toLocaleUpperCase()}}</ion-title>
+        <ion-title>Alimentación</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+    <!--<img src="{{alimento.foto}}" alt="">-->
 
     <ion-card>
-        <img src="{{alimento.foto}}" alt="">
         <ion-card-header>
-            <ion-card-title>{{alimento.name}}</ion-card-title>
+            <ion-card-title color="primary">
+                {{alimento.name}}
+                <div class="boton">
+                    <ion-button fill="clear" (click)="lanzarMenu()">
+                        <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+                    </ion-button>
+                </div>
+
+            </ion-card-title>
         </ion-card-header>
 
-        <ion-card-content class="ion-padding">
-          <ion-list>
-            <ion-item>
-              <h2 slot="start" style="font-weight: bold">Valor Nutricional: </h2>
-              <h2 slot="end">por 100 gramos</h2>
-            </ion-item>
-            <ion-item>
-              <h2 slot="start"> Calorías: </h2>
-              <p slot="end">{{alimento.calorias}} g</p>
-            </ion-item>
-            <ion-item>
-              <h2 slot="start">Grasas: </h2>
-              <p slot="end">{{alimento.grasas}} g</p>
-            </ion-item>
-            <ion-item>
-              <h2 slot="start"> - de las cuales saturadas: </h2>
-              <p slot="end">{{alimento.grasas_saturadas}} g</p>
-            </ion-item>
-            <ion-item>
-              <h2 slot="start">Hidratos de Carbono: </h2>
-              <p slot="end">{{alimento.hidratos_de_carbono}} g</p>
-            </ion-item>
-            <ion-item>
-              <h2 slot="start"> - de los cuales azúcares: </h2>
-              <p slot="end">{{alimento.hidratos_de_carbono_azucares}} g</p>
-            </ion-item>
-            <ion-item>
-              <h2 slot="start"> Proteínas: </h2>
-              <p slot="end">{{alimento.proteinas}} g</p>
-            </ion-item>
-            <ion-item>
-              <h2 slot="start"> Sal: </h2>
-              <p slot="end">{{alimento.sal}} g</p>
-            </ion-item>
-
-          </ion-list>
+        <ion-card-content>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th scope="row">Valor Nutricional:</th>
+                    <td> por 100 gramos</td>
+                </tr>
+                <tr>
+                    <th scope="row"> Calorías:</th>
+                    <td> {{alimento.calorias}} g</td>
+                </tr>
+                <tr>
+                    <th scope="row">Grasas:</th>
+                    <td>{{alimento.grasas}} g</td>
+                </tr>
+                <tr>
+                    <th slot="start"> - de las cuales saturadas:</th>
+                    <td slot="end">{{alimento.grasas_saturadas}} g</td>
+                </tr>
+                <tr>
+                    <th>Hidratos de Carbono:</th>
+                    <td>{{alimento.hidratos_de_carbono}} g</td>
+                </tr>
+                <tr>
+                    <th> - de los cuales azúcares:</th>
+                    <td>{{alimento.hidratos_de_carbono_azucares}} g</td>
+                </tr>
+                <tr>
+                    <th> Proteínas:</th>
+                    <td>{{alimento.proteinas}} g</td>
+                </tr>
+                <tr>
+                    <th> Sal:</th>
+                    <td>{{alimento.sal}} g</td>
+                </tr>
+                </tbody>
+            </table>
         </ion-card-content>
     </ion-card>
+
 
 </ion-content>

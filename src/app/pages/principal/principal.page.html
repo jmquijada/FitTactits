@@ -2,7 +2,45 @@
 
 <ion-content>
 
+  <ion-grid class="ion-margin-top">
+
+    <ion-slides [options]="opciones" class="pos">
+      <ion-slide class="slide">
+        <img class="borde" src="assets/slides-principal/slide-1.jpg" alt=""/>
+        <p class="bottom-left">Entrenamientos Personalizados</p>
+      </ion-slide>
+
+      <ion-slide class="slide">
+        <img class="borde" src="assets/slides-principal/slide-2.jpg" alt=""/>
+        <p class="bottom-left">Multitud de Ejercicios</p>
+      </ion-slide>
+
+      <ion-slide class="slide">
+        <img class="borde" src="assets/slides-principal/slide-3.jpg" alt=""/>
+        <p class="bottom-right bottom-left">Información Nutricional</p>
+      </ion-slide>
+    </ion-slides>
+
+  </ion-grid>
+
   <ion-grid>
+
+    <div class="container">
+      <div class="card">
+        <div class="box">
+          <div class="percent">
+            <svg>
+              <circle cx="70" cy="70" r="70"></circle>
+              <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h2 class="ion-text-center">{{stepCount}}</h2>
+            </div>
+          </div>
+          <h2 class="text ion-text-center">Pasos</h2>
+        </div>
+      </div>
+    </div>
 
     <ion-row>
       <ion-col size="6">
@@ -12,43 +50,35 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card class="ppal ion-text-center ion-padding" color="primary"  [routerLink]="['/main/tabs/tab3']">
+        <ion-card class="ppal ion-text-center ion-padding" color="light" [routerLink]="['/main/tabs/tab3']">
           <ion-icon name="barbell-outline"></ion-icon>
-          <h2>Tus Rutinas</h2>
+          <h2>Rutinas</h2>
         </ion-card>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="6">
-        <ion-card class="ppal ion-text-center ion-padding" color="danger"  [routerLink]="['/main/tabs/tab2']">
-          <ion-icon src="/assets/food.svg"></ion-icon>
-          <h2>Alimentación</h2>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card class="ppal ion-text-center ion-padding" color="tertiary"  [routerLink]="['/main/tabs/tab4']">
-          <ion-icon name="bar-chart-outline"></ion-icon>
-          <h2>Progreso</h2>
-        </ion-card>
-      </ion-col>
+
+      <section id="container">
+        <ul id="listlink">
+          <li>
+            <div></div>
+            <span class="titles"><i class="fas fa-poll"></i>Resumen</span><span class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
+          </li>
+          <li [routerLink]="['/main/tabs/tab3']">
+            <div></div>
+            <span class="titles"><i><ion-icon name="barbell-outline"></ion-icon></i>Ejercicios</span><span class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
+          </li>
+          <li>
+            <div></div>
+            <span class="titles"><i><ion-icon src="assets/food.svg"></ion-icon></i>Alimentación</span><span class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
+          </li>
+        </ul>
+      </section>
+
     </ion-row>
 
-    <ion-row>
-      <ion-col size="6">
-        <ion-card class="ppal ion-text-center ion-padding" color="dark"  [routerLink]="['/main/tabs/tab1']">
-          <ion-icon name="person-outline"></ion-icon>
-          <h2>Perfil</h2>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card class="ppal ion-text-center ion-padding" color="success">
-          <ion-icon name="paw-outline"></ion-icon>
-          <h2>Pasos</h2>
-          {{stepCount}}
-        </ion-card>
-      </ion-col>
-    </ion-row>
+
   </ion-grid>
 
 </ion-content>

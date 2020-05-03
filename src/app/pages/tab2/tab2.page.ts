@@ -12,6 +12,8 @@ export class Tab2Page implements OnInit {
     alimentos: any[] = [];
     @Input() alimento: IAlimento;
     arrayfiltrado: any[] = this.alimentos.slice();
+
+
     constructor(private dataService: DataService) {
 
     }

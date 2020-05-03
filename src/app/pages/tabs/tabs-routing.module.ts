@@ -64,6 +64,14 @@ const routes: Routes = [
         loadChildren: () => import('../crear-rutinas/crear-rutinas.module').then( m => m.CrearRutinasPageModule)
       },
       {
+        path: 'alimento-calc',
+        loadChildren: () => import('../alimento-calc/alimento-calc.module').then( m => m.AlimentoCalcPageModule)
+      },
+      {
+        path: 'alimento-fav',
+        loadChildren: () => import('../alimento-fav/alimento-fav.module').then( m => m.AlimentoFavPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
