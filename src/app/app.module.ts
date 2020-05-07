@@ -11,10 +11,9 @@ import {AppComponent} from './app.component';
 import {ComponentsModule} from './components/components.module';
 import {HttpClientModule} from '@angular/common/http';
 import {PipesModule} from './pipes/pipes.module';
-import { Pedometer } from '@ionic-native/pedometer/ngx';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { IonicStorageModule } from '@ionic/storage';
-import { Health } from '@ionic-native/health/ngx';
+
 
 @NgModule({
     declarations: [AppComponent],
@@ -32,9 +31,7 @@ import { Health } from '@ionic-native/health/ngx';
         StatusBar,
         SplashScreen,
         HttpClientModule,
-        Pedometer,
         BackgroundMode,
-        Health,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]

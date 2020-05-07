@@ -15,6 +15,64 @@
     </ion-slide>
   </ion-slides>
 
+  <div *ngIf="datalocalService.alimentos.length > 0" >
+    <ion-card *ngFor="let alimento of datalocalService.alimentos">
+      <ion-card-header>
+        <ion-card-title color="primary">
+          {{alimento.name}}
+          .
+          {{enFavoritos}}
+          <div class="boton">
+            <ion-button fill="clear" (click)="lanzarMenu()">
+              <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <table class="table">
+          <tbody>
+          <tr>
+            <th scope="row">Valor Nutricional:</th>
+            <td> por 100 gramos</td>
+          </tr>
+          <tr>
+            <th scope="row"> Calorías:</th>
+            <td> {{alimento.calorias}} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Grasas:</th>
+            <td>{{alimento.grasas}} g</td>
+          </tr>
+          <tr>
+            <th slot="start"> - de las cuales saturadas:</th>
+            <td slot="end">{{alimento.grasas_saturadas}} g</td>
+          </tr>
+          <tr>
+            <th>Hidratos de Carbono:</th>
+            <td>{{alimento.hidratos_de_carbono}} g</td>
+          </tr>
+          <tr>
+            <th> - de los cuales azúcares:</th>
+            <td>{{alimento.hidratos_de_carbono_azucares}} g</td>
+          </tr>
+          <tr>
+            <th> Proteínas:</th>
+            <td>{{alimento.proteinas}} g</td>
+          </tr>
+          <tr>
+            <th> Sal:</th>
+            <td>{{alimento.sal}} g</td>
+          </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
 
 
 </ion-content>

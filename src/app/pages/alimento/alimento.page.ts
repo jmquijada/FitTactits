@@ -15,7 +15,7 @@ export class AlimentoPage implements OnInit {
 
   idAlimento: number;
   alimento: IAlimento;
-  @Input() enFavoritos;
+  @Input() enFavoritos = false;
 
   // tslint:disable-next-line:max-line-length
   constructor(private actionSheetCtrl: ActionSheetController,
@@ -57,6 +57,7 @@ export class AlimentoPage implements OnInit {
         cssClass: 'action-dark',
         handler: () => {
           console.log('Favorito');
+          this.enFavoritos = true;
           this.datalocalService.guardarAlimento(this.alimento);
         }
       };

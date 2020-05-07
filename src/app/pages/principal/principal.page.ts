@@ -1,9 +1,9 @@
 import {ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
 import {BackgroundMode} from '@ionic-native/background-mode/ngx';
-import {IPedometerData, Pedometer} from '@ionic-native/pedometer/ngx';
 import {Platform} from '@ionic/angular';
-import {Health} from '@ionic-native/health/ngx';
 import {DataLocalService} from '../../services/data-local.service';
+
+
 
 
 @Component({
@@ -19,7 +19,6 @@ export class PrincipalPage implements OnInit {
     distance = 0;
     floorUp = 0;
     floorDown = 0;
-
     // Booleanos permisos
     pasosBool = false;
     distanceBool = false;
@@ -29,7 +28,7 @@ export class PrincipalPage implements OnInit {
     PedometerData: any;
     stepCount: any = 0;
     startDate: Date;
-    endDate: any;
+    endDate: Date;
 
     opciones = {
         slidesPerView: 1.3,
@@ -39,26 +38,25 @@ export class PrincipalPage implements OnInit {
     constructor(private background: BackgroundMode,
                 private plt: Platform,
                 private ngzone: NgZone,
-                private pedomCtrl: Pedometer,
                 public refdect: ChangeDetectorRef,
-                private health: Health,
                 private dataService: DataLocalService) {
         this.background.enable();
-        this.watchSteps();
+        // this.watchSteps();
 
     }
 
     ngOnInit() {
 
     }
-
+/*
     watchSteps() {
-        this.pedomCtrl.startPedometerUpdates()
+        this.pedo.startPedometerUpdates()
             .subscribe((data: IPedometerData) => {
 
                 this.stepCount = data.numberOfSteps;
                 this.dataService.guardarPasos(this.stepCount);
-
+                // this.startDate = new Date(this.PedometerData.startDate);
+                // this.endDate = new Date(this.PedometerData.endDate);
                 if (this.stepCount == 100) {
                     alert('Yes! Your have completed 100 steps');
                 }
@@ -66,5 +64,5 @@ export class PrincipalPage implements OnInit {
             });
 
     }
-
+*/
 }

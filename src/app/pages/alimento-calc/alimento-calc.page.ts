@@ -17,74 +17,7 @@ export class AlimentoCalcPage implements OnInit {
     }
 
     ngOnInit() {
-        this.limpar();
+
     }
 
-    limpar(): void {
-        this.numero1 = '0';
-        this.numero2 = null;
-        this.resultado = null;
-        this.operacion = null;
-    }
-
-    AgregarNumero(numero: string): void {
-        if (this.operacion === null) {
-            this.numero1 = this.concatenarNumero(this.numero1, numero);
-        } else {
-            this.numero2 = this.concatenarNumero(this.numero2, numero);
-        }
-    }
-
-    concatenarNumero(numAtual: string, numConcat: string): string {
-        if (numAtual === '0' || numAtual === null) {
-            numAtual = '';
-        }
-        if (numConcat === '.' && numAtual === '') {
-            return '0.';
-        }
-        if (numConcat === '.' && numAtual.indexOf('.') > -1) {
-            return numAtual;
-        }
-        return numAtual + numConcat;
-    }
-
-    definirOperacion(operacion: string): void {
-
-        if (this.operacion === null) {
-            this.operacion = operacion;
-            return;
-        }
-
-        if (this.numero2 !== null) {
-            this.resultado = this.datalocalService.calcular(
-                parseFloat(this.numero1),
-                parseFloat(this.numero2),
-                this.operacion);
-            this.operacion = operacion;
-            this.numero1 = this.resultado.toString();
-            this.numero2 = null;
-            this.resultado = null;
-        }
-    }
-
-    calcular(): void {
-        if (this.numero2 === null) {
-            return;
-        }
-
-        this.resultado = this.datalocalService.calcular(
-            parseFloat(this.numero1),
-            parseFloat(this.numero2),
-            this.operacion);
-    }
-
-    get display(): string {
-        if (this.resultado !== null) {
-            return this.resultado.toString();
-        }
-        if (this.numero2 !== null) {
-            return this.numero2;
-        }
-        return this.numero1;
-    }
 }
