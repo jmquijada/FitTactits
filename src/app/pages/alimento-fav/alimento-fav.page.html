@@ -1,8 +1,9 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="dark">
-    <ion-title>
-      Favoritos
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alimentos Favoritos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,13 +16,11 @@
     </ion-slide>
   </ion-slides>
 
-  <div *ngIf="datalocalService.alimentos.length > 0" >
+  <div *ngIf="datalocalService.alimentos.length > 0">
     <ion-card *ngFor="let alimento of datalocalService.alimentos">
       <ion-card-header>
         <ion-card-title color="primary">
           {{alimento.name}}
-          .
-          {{enFavoritos}}
           <div class="boton">
             <ion-button fill="clear" (click)="lanzarMenu()">
               <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>

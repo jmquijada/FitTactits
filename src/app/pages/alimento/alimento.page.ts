@@ -15,7 +15,7 @@ export class AlimentoPage implements OnInit {
 
   idAlimento: number;
   alimento: IAlimento;
-  @Input() enFavoritos = false;
+  enFavoritos = false;
 
   // tslint:disable-next-line:max-line-length
   constructor(private actionSheetCtrl: ActionSheetController,
@@ -66,7 +66,7 @@ export class AlimentoPage implements OnInit {
       buttons: [
         guardarBorrarBtn,
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           icon: 'close',
           cssClass: 'action-dark',
           role: 'cancel',

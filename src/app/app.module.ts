@@ -14,7 +14,6 @@ import {PipesModule} from './pipes/pipes.module';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 
-
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
