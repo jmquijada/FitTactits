@@ -109,4 +109,19 @@
         <variable name="HEALTH_WRITE_PERMISSION" value="App needs write access" />
         <variable name="GMS_VERSION" value="16.0.1" />
     </plugin>
+    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+        <string>Necesito tu autorización para saber tu ubicación</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+        <string>Se necesita acceso para tomar fotos</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+        <string>Se necesita acceso a la librería</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+        <string>Se necesita geolocaclización</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryAddUsageDescription">
+        <string>Se necesita acceso para guardar las fotos</string>
+    </edit-config>
 </widget>

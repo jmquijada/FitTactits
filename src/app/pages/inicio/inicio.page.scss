@@ -2,6 +2,7 @@ ion-content ion-toolbar {
   --background: translucent;
   margin: 0;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 ion-slides {
@@ -15,7 +16,7 @@ ion-slides {
   background-repeat: no-repeat;
 }
 
-.texto-2{
+.texto-2 {
   font-family: 'Luckiest Guy', cursive;
   margin: 0.2em 0;
   color: #D92B2B;
@@ -54,3 +55,80 @@ p {
 p b {
   color: var(--ion-text-color, #000000);
 }
+
+
+.login-form {
+  margin: 30px auto;
+}
+
+.login-form form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.login-form h2 {
+  margin: 0 0 15px;
+}
+
+.login-form .hint-text {
+  color: #777;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.form-control, .btn {
+  min-height: 38px;
+  border-radius: 2px;
+}
+
+.login-btn {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.or-seperator {
+  margin: 20px 0 10px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.or-seperator i {
+  padding: 0 10px;
+  background: #f7f7f7;
+  position: relative;
+  top: -11px;
+  z-index: 1;
+}
+
+.social-btn .btn {
+  margin: 10px 0;
+  font-size: 15px;
+  text-align: left;
+  line-height: 24px;
+}
+
+.social-btn .btn i {
+  float: left;
+  margin: 4px 15px 0 5px;
+  min-width: 15px;
+}
+
+.input-group-addon .fa {
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

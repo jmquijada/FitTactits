@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 })
 export class InicioPage {
 
-  constructor() {}
+  constructor() {
+
+  }
 
   opciones = {
     slidesPerView: 1,

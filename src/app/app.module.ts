@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {PipesModule} from './pipes/pipes.module';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { IonicStorageModule } from '@ionic/storage';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @NgModule({
     declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { IonicStorageModule } from '@ionic/storage';
         SplashScreen,
         HttpClientModule,
         BackgroundMode,
+        Camera,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]
