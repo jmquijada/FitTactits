@@ -19,13 +19,14 @@ ion-slides {
 .texto-2 {
   font-family: 'Luckiest Guy', cursive;
   margin: 0.2em 0;
-  color: #D92B2B;
+  color: #0091b0;
   font-size: 28px;
 }
 
 .texto {
   font-family: 'Luckiest Guy', cursive;
-  color: #D92B2B;
+  color: #0091b0;
+  // color: #D92B2B;
   font-size: 15px;
   margin: 0;
 }
@@ -119,10 +120,115 @@ p b {
   font-size: 18px;
 }
 
+.content {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
 
+.BoxOne {
+  width: 100%;
+  margin: auto;
+  background: #cce4ff;
+  position: relative;
+  height: 400px;
 
+  padding: 140px 0px;
+}
 
+.BoxOne::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
 
+  width: 100%;
+  height: 100%;
+
+  background: inherit;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  transform-origin: top right;
+  transform: skewY(-11deg);
+}
+
+.BoxTwo .content p {
+  width: 50%;
+  margin-top: 20px;
+  font-size: 1em;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.BoxTwo {
+  width: 100%;
+  position: relative;
+  z-index: -2;
+  padding: 250px 0px 100px;
+  background: #105baf;
+  color: #fff;
+  height: 100%;
+}
+
+.banner {
+  height: 65%;
+  position: relative;
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+}
+
+h1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0 2px 20px #000;
+  font-size: 50px;
+}
+
+.content2 {
+  background: #fff;
+  color: #fff;
+  height: 450px;
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.content2 > h2 {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.content2:before {
+  position: absolute;
+  content: '';
+  width: 60%;
+  height: 72px;
+  top: -50px;
+  left: 0;
+  background: #fff;
+  transform: skewY(10deg);
+}
+
+.content2:after {
+  position: absolute;
+  content: '';
+  width: 60%;
+  height: 72px;
+  top: -50px;
+  right: 0;
+  background: #fff;
+  transform: skewY(-10deg);
+}
 
 
 

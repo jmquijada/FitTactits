@@ -2,55 +2,38 @@
 
     <ion-slides [options]="opciones">
 
-        <!-- Posible ngFor para todas las secciones
         <ion-slide>
-            <img src="assets/inicio-2.jpg" alt="">
-            <p class="texto-2">FIT TACTICS</p>
-            <p class="texto">Ponte en forma con nosotros</p>
-            <ion-icon class="icono" style="color: #D92B2B;" name="arrow-forward-circle-outline"></ion-icon>
+            <div class="banner">
+                <h1>FIT TACTICS</h1>
+                <img src="assets/inicio-2.jpg" alt="">
+            </div>
+            <div class="content2">
+                <h2>Tu aplicación de entrenamiento</h2>
+                <h2>Ponte en forma con nosotros</h2>
+            </div>
         </ion-slide>
 
         <ion-slide>
-            <img src="assets/seis.jpg" alt=""/>
-            <h2>Alimentación</h2>
-            <p>Filtro de búsqueda</p>
-            <ion-icon color="primary" class="icono" name="arrow-forward-circle-outline"></ion-icon>
+            <div class="banner">
+                <h1>Alimentación</h1>
+                <img src="assets/cinco.jpg" alt="">
+            </div>
+            <div class="content2">
+                <h2>Información nutricional sobre una gran variedad de comidas y alimentos</h2>
+            </div>
         </ion-slide>
 
         <ion-slide>
-            <img src="assets/cinco.jpg" alt=""/>
-            <h2>Alimentación</h2>
-            <p>Alimentos por individual</p>
-            <p>Calculadora de calorías</p>
-            <ion-icon color="primary" class="icono" name="arrow-forward-circle-outline"></ion-icon>
+            <div class="banner">
+                <h1>Entrenamiento</h1>
+                <img src="assets/dos.jpg" alt="">
+            </div>
+            <div class="content2">
+                <h2>Personaliza tus entrenamientos y rutinas</h2>
+            </div>
         </ion-slide>
 
         <ion-slide>
-            <img src="assets/uno.jpg" alt=""/>
-            <h2>Ejercicios</h2>
-            <p>Test para comprobar tu nivel</p>
-            <p>Rutinas personalizadas</p>
-            <ion-icon color="primary" class="icono" name="arrow-forward-circle-outline"></ion-icon>
-        </ion-slide>
-
-        <ion-slide>
-            <img src="assets/dos.jpg" alt=""/>
-            <h2>Ejercicios</h2>
-            <p>Encuentra la rutina que mejor se adapte a tus necesidades</p>
-            <ion-icon color="primary" class="icono" name="arrow-forward-circle-outline"></ion-icon>
-        </ion-slide>
-
-        <ion-slide>
-            <img src="assets/tres.jpg" alt=""/>
-            <h2>Progreso</h2>
-            <p>Estarás al corriente en todo momento de tu progresión</p>
-            <ion-icon color="primary" class="icono" name="arrow-forward-circle-outline"></ion-icon>
-
-        </ion-slide>
--->
-        <ion-slide>
-
-
             <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
                 <div class="uk-width-1-1">
                     <div class="uk-container">
@@ -69,26 +52,37 @@
                                                 <form>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <ion-input type="text" class="form-control" name="username" placeholder="Usuario" required="required"></ion-input>
+                                                            <ion-input type="text" class="form-control" name="username"
+                                                                       placeholder="Usuario"
+                                                                       required="required"></ion-input>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <ion-input type="email" class="form-control" name="email" placeholder="Email" required="required"></ion-input>
+                                                            <ion-input type="email" class="form-control" name="email"
+                                                                       placeholder="Email"
+                                                                       required="required"></ion-input>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <ion-input type="password" class="form-control" name="password" placeholder="Contraseña" required="required"></ion-input>
+                                                            <ion-input type="password" class="form-control"
+                                                                       name="password" placeholder="Contraseña"
+                                                                       required="required"></ion-input>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <ion-input type="password" class="form-control" name="password" placeholder="Repetir contraseña" required="required"></ion-input>
+                                                            <ion-input type="password" class="form-control"
+                                                                       name="password" placeholder="Repetir contraseña"
+                                                                       required="required"></ion-input>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <ion-button type="submit" class="btn btn-block login-btn text-white" [routerLink]="['/principal']">Registrarse</ion-button>
+                                                        <ion-button type="submit"
+                                                                    class="btn btn-block login-btn text-white"
+                                                                    [routerLink]="['/principal']">Registrarse
+                                                        </ion-button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -98,23 +92,33 @@
                                             <div class="login-form">
                                                 <form>
                                                     <div class="text-center social-btn">
-                                                        <a href="#" class="btn btn-primary btn-block"><i class="fab fa-facebook"></i> Inicia con <b>Facebook</b></a>
-                                                        <a href="#" class="btn btn-info btn-block"><i class="fab fa-twitter-square"></i> Inicia con <b>Twitter</b></a>
-                                                        <a href="#" class="btn btn-danger btn-block"><i class="fab fa-google"></i> Inicia con <b>Google</b></a>
+                                                        <a href="#" class="btn btn-primary btn-block"><i
+                                                                class="fab fa-facebook"></i> Inicia con <b>Facebook</b></a>
+                                                        <a href="#" class="btn btn-info btn-block"><i
+                                                                class="fab fa-twitter-square"></i> Inicia con
+                                                            <b>Twitter</b></a>
+                                                        <a href="#" class="btn btn-danger btn-block"><i
+                                                                class="fab fa-google"></i> Inicia con <b>Google</b></a>
                                                     </div>
                                                     <div class="or-seperator"><i>o</i></div>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <ion-input type="text" class="form-control" name="username" placeholder="Usuario" required="required"></ion-input>
+                                                            <ion-input type="text" class="form-control" name="username"
+                                                                       placeholder="Usuario"
+                                                                       required="required"></ion-input>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <ion-input type="password" class="form-control" name="password" placeholder="Contraseña" required="required"></ion-input>
+                                                            <ion-input type="password" class="form-control"
+                                                                       name="password" placeholder="Contraseña"
+                                                                       required="required"></ion-input>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <ion-button type="submit" class="btn btn-block login-btn">Iniciar</ion-button>
+                                                        <ion-button type="submit" class="btn btn-block login-btn">
+                                                            Iniciar
+                                                        </ion-button>
                                                     </div>
 
                                                 </form>
