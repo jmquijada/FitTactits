@@ -4,23 +4,17 @@ import {MenuComponent} from './menu/menu.component';
 import {IonicModule} from '@ionic/angular';
 import {HeaderComponent} from './header/header.component';
 import {RouterModule} from '@angular/router';
-import {AlimentoCalcComponent} from './alimento-calc/alimento-calc.component';
-import {AlimentoFavComponent} from './alimento-fav/alimento-fav.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
     declarations: [
         MenuComponent,
-        HeaderComponent,
-        AlimentoCalcComponent,
-        AlimentoFavComponent
+        HeaderComponent
     ],
     exports: [
         MenuComponent,
-        HeaderComponent,
-        AlimentoCalcComponent,
-        AlimentoFavComponent
+        HeaderComponent
     ],
     imports: [
         CommonModule,

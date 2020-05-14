@@ -11,9 +11,9 @@ import {AppComponent} from './app.component';
 import {ComponentsModule} from './components/components.module';
 import {HttpClientModule} from '@angular/common/http';
 import {PipesModule} from './pipes/pipes.module';
-import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [AppComponent],
@@ -25,13 +25,14 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
         ComponentsModule,
         HttpClientModule,
         PipesModule,
-        IonicStorageModule.forRoot()
+        IonicStorageModule.forRoot(),
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [
         StatusBar,
         SplashScreen,
         HttpClientModule,
-        BackgroundMode,
         Camera,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],

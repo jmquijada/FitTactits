@@ -1,5 +1,4 @@
 import {ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
-import {BackgroundMode} from '@ionic-native/background-mode/ngx';
 import {Platform} from '@ionic/angular';
 import {DataLocalService} from '../../services/data-local.service';
 
@@ -35,12 +34,10 @@ export class PrincipalPage implements OnInit {
     };
 
 
-    constructor(private background: BackgroundMode,
-                private plt: Platform,
+    constructor(private plt: Platform,
                 private ngzone: NgZone,
                 public refdect: ChangeDetectorRef,
                 private dataService: DataLocalService) {
-        this.background.enable();
         // this.watchSteps();
 
     }
