@@ -9,7 +9,7 @@ import {MenuController} from '@ionic/angular';
 export class HeaderComponent implements OnInit {
 
   @Input() titulo: string;
-
+  color: '#c4302b';
   constructor( private menuCtrl: MenuController) { }
 
   ngOnInit() {}

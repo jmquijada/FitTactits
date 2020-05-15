@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-    <ion-toolbar>
+    <ion-toolbar class="new-background-color" style="color: white;">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/main/tabs/tab2"></ion-back-button>
         </ion-buttons>
@@ -12,10 +12,10 @@
 
     <ion-card>
         <ion-card-header>
-            <ion-card-title color="primary">
+            <ion-card-title style="color: #c4302b">
                 {{alimento.name}}
                 <div class="boton">
-                    <ion-button fill="clear" (click)="lanzarMenu()">
+                    <ion-button style="color: #c4302b" fill="clear" (click)="lanzarMenu()">
                         <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
                     </ion-button>
                 </div>
