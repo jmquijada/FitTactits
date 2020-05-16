@@ -1,6 +1,7 @@
+<!-- Componente Menú -->
 <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
-        <ion-toolbar>
+        <ion-toolbar class="new-background-color" style="color: white;">
             <ion-title>Menú</ion-title>
         </ion-toolbar>
     </ion-header>
@@ -14,7 +15,7 @@
             </ion-list-header>
             <ion-menu-toggle *ngFor="let o of opciones | async">
                 <ion-item [routerLink]="o.redirectTo">
-                    <ion-icon slot="start" src="/assets/{{o.icon}}" color="{{o.color}}"></ion-icon>
+                    <ion-icon slot="start" src="/assets/{{o.icon}}" style="color: #c4302b"></ion-icon>
                     <ion-label>{{o.name}}</ion-label>
                 </ion-item>
             </ion-menu-toggle>

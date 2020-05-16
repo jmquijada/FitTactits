@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
+  // Para controlar que se abra o cierre el menú
   toggleMenu() {
     this.menuCtrl.toggle();
   }

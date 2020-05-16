@@ -13,7 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {PipesModule} from './pipes/pipes.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { File } from '@ionic-native/file/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 @NgModule({
     declarations: [AppComponent],
@@ -34,6 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         SplashScreen,
         HttpClientModule,
         Camera,
+        File,
+        WebView,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]

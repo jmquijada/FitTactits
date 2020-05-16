@@ -5,68 +5,70 @@ import {IAlimento} from '../../interfaces/interfaces';
 
 
 @Component({
-  selector: 'app-alimento-fav',
-  templateUrl: './alimento-fav.page.html',
-  styleUrls: ['./alimento-fav.page.scss'],
+    selector: 'app-alimento-fav',
+    templateUrl: './alimento-fav.page.html',
+    styleUrls: ['./alimento-fav.page.scss'],
 })
 export class AlimentoFavPage implements OnInit {
 
-  sliderOpts = {
-    allowSlidePrev: false,
-    allowSlideNext: false
-  };
+    sliderOpts = {
+        allowSlidePrev: false,
+        allowSlideNext: false
+    };
 
-  @Input() alimento: IAlimento;
-  @Input() alimentos;
-  @Input() enFavoritos;
+    @Input() alimento: IAlimento;
+    @Input() alimentos;
+    @Input() enFavoritos;
 
-  constructor(public datalocalService: DataLocalService,
-              public actionSheetCtrl: ActionSheetController) { }
-
-  ngOnInit() {
-
-  }
-
-  async lanzarMenu() {
-
-    let guardarBorrarBtn;
-
-    if (this.enFavoritos) {
-      guardarBorrarBtn = {
-        text: 'Borrar Favorito',
-        icon: 'trash',
-        cssClass: 'action-dark',
-        handler: () => {
-          console.log('Borrar de favoritos');
-          this.enFavoritos = false;
-          this.datalocalService.borrarAlimento(this.alimento);
-        }
-      };
-    } else {
-      guardarBorrarBtn = {
-        text: 'Favorito',
-        icon: 'star',
-        cssClass: 'action-dark',
-        handler: () => {
-          console.log('Favorito');
-          this.datalocalService.guardarAlimento(this.alimento);
-        }
-      };
+    constructor(public datalocalService: DataLocalService,
+                public actionSheetCtrl: ActionSheetController) {
     }
-    const actionSheet = await this.actionSheetCtrl.create({
-      buttons: [
-        guardarBorrarBtn,
-        {
-          text: 'Cancel',
-          icon: 'close',
-          cssClass: 'action-dark',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }]
-    });
-    await actionSheet.present();
-  }
+
+    ngOnInit() {
+
+    }
+
+    // Lanza el menú de opciones de los favoritos (X)
+    async lanzarMenu() {
+
+        let guardarBorrarBtn;
+
+        if (this.enFavoritos) {
+            guardarBorrarBtn = {
+                text: 'Borrar Favorito',
+                icon: 'trash',
+                cssClass: 'action-dark',
+                handler: () => {
+                    console.log('Borrar de favoritos');
+                    this.enFavoritos = false;
+                    this.datalocalService.borrarAlimento(this.alimento);
+                }
+            };
+        } else {
+            guardarBorrarBtn = {
+                text: 'Favorito',
+                icon: 'star',
+                cssClass: 'action-dark',
+                handler: () => {
+                    console.log('Favorito');
+                    this.datalocalService.guardarAlimento(this.alimento);
+                }
+            };
+        }
+        const actionSheet = await this.actionSheetCtrl.create({
+            buttons: [
+                guardarBorrarBtn,
+                {
+                    text: 'Cancel',
+                    icon: 'close',
+                    cssClass: 'action-dark',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Cancel clicked');
+                    }
+                }]
+        });
+        await actionSheet.present();
+    }
 
 }

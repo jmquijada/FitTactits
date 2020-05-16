@@ -46,6 +46,7 @@ export class PrincipalPage implements OnInit {
 
     }
 /*
+Cambió el plugin del pedómetro y se torcieron las tornas
     watchSteps() {
         this.pedo.startPedometerUpdates()
             .subscribe((data: IPedometerData) => {

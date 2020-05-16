@@ -5,7 +5,13 @@ ion-content ion-toolbar {
 ion-slides, ion-slide {
   width: 100%;
   height: 100%;
+
 }
+
+.new-background-color {
+  --background: #c4302b;
+}
+
 
 img {
   height: 50%;
@@ -23,3 +29,4 @@ img {
 .table {
   color: grey !important;
 }
+

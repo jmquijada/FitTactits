@@ -18,12 +18,14 @@ export class Tab2Page implements OnInit {
 
     }
 
+    // Método para buscar un alimento específico
     buscar(event) {
         this.arrayfiltrado = this.alimentos.filter(alimento => {
             return alimento.name.toLowerCase().includes(event.detail.value);
         });
     }
 
+    // Inicializamos la página con todos los alimentos - ¿Infinite Scroll?
     ngOnInit() {
         this.dataService.getAlimentacion()
             .subscribe(food => {
