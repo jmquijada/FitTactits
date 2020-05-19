@@ -3,6 +3,11 @@
     <ion-title>
       {{nombreRutina}} - {{diaObjeto.nombre}}
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="rService.cerrarRutina()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

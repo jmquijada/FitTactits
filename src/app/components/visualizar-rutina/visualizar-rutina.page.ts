@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { RutinaService } from '../services/rutina.service';
-import { IDias } from '../interfaces/interfaces';
-import { IonButton } from '@ionic/angular';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { IonButton } from '@ionic/angular'; 
+import { IDias } from 'src/app/interfaces/interfaces'; 
+import { RutinaService } from 'src/app/services/rutina.service';
+
 
 @Component({
   selector: 'app-visualizar-rutina',
@@ -17,7 +18,7 @@ export class VisualizarRutinaPage implements OnInit {
 
   boolCircuito;
   widthImagen = 300;
-  
+
   constructor(public rService: RutinaService) { }
 
   ngOnInit() {

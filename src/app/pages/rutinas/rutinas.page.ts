@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { IRutina, IDias } from '../../interfaces/interfaces';
 import { FireDbService } from '../../services/fire-db.service';
-import { VisualizarRutinaPage } from '../../visualizar-rutina/visualizar-rutina.page';
+import { VisualizarRutinaPage } from '../../components/visualizar-rutina/visualizar-rutina.page';
 
 @Component({
   selector: 'app-rutinas',
@@ -44,7 +44,7 @@ export class RutinasPage implements OnInit {
 
 
   // Alert para Seleccionar el Día
-  async presentAlertConfirm(idRutina) {
+  async alertSeleccionaDia(idRutina) {
     let botones;
     if (this.modoRutinas === 'general') {
       botones = this.prepararButtons(this.rutinas[idRutina].nombre, idRutina);
@@ -106,6 +106,8 @@ export class RutinasPage implements OnInit {
 
   // Funcion para la información de la rutina
   async infoRutina(rutina: IRutina) {
+    let stringDiasEj = this.getTextoDias(rutina);
+
     const infoRutina = '<p>' +
       `Nombre: ${rutina.nombre}` +
       '</p>' +
@@ -120,7 +122,8 @@ export class RutinasPage implements OnInit {
       '</p>' +
       '<p>' +
       `Necesita material: ${(rutina.material) ? 'Sí' : 'No'}` +
-      '</p>';
+      '</p>'+
+      stringDiasEj;
     const alert = await this.alertCtrl.create({
       header: 'Información de Rutina',
       message: infoRutina,
@@ -128,5 +131,18 @@ export class RutinasPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  // Funcion que retorna los ejercicios del dia
+  getTextoDias(rutina: IRutina): string {
+    let cadena = '';
+
+    for (let dia of rutina.dias) {
+      cadena += `<div>${dia.nombre}</div>`;
+      for (let ejercicio of dia.ejercicios) {
+        cadena += `<div>- ${ejercicio.nombre}</div>`;
+      }
+    }
+    return cadena;
   }
 }

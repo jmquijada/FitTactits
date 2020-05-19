@@ -8,8 +8,8 @@ import { RutinasPageRoutingModule } from './rutinas-routing.module';
 
 import { RutinasPage } from './rutinas.page';
 import { ComponentsModule } from '../../components/components.module';
-import { VisualizarRutinaPage } from '../../visualizar-rutina/visualizar-rutina.page';
-import { VisualizarRutinaPageModule } from '../../visualizar-rutina/visualizar-rutina.module';
+import { VisualizarRutinaPage } from '../../components/visualizar-rutina/visualizar-rutina.page';
+import { VisualizarRutinaPageModule } from '../../components/visualizar-rutina/visualizar-rutina.module';
 
 @NgModule({
   entryComponents: [VisualizarRutinaPage],

@@ -13,9 +13,19 @@ export class RutinaService {
   minutos = 0;
   segundos = 0;
 
+  timeoutId;
+  idInterval;
+
   constructor(private alertCtrl: AlertController,
-    private toastCtrl: ToastController,
-    private modalCtrl: ModalController) { }
+              private toastCtrl: ToastController,
+              private modalCtrl: ModalController) { }
+
+  // Cerrar Rutina de Forma Bruta
+  cerrarRutina() {
+    clearTimeout(this.timeoutId);
+    clearInterval(this.idInterval);
+    this.modalCtrl.dismiss();
+  }
 
   // Función para cambiar de ejercicio en caso de que el tipo de rutina sea 'Clásico'
   cambiarEjercicio(diaObjeto: IDias, siguienteEjercicio: IonButton) {
@@ -30,7 +40,7 @@ export class RutinaService {
       siguienteEjercicio.disabled = true;
 
       // Inicia el temporizador casi a la misma vez que el descanso. Cuando termine, aumenta serie/ejercicio
-      setTimeout(() => {
+      this.timeoutId = setTimeout(() => {
         siguienteEjercicio.disabled = false;
         this.serie++;
         this.alertContinua();
@@ -94,13 +104,13 @@ export class RutinaService {
     this.minutos = Math.floor(tiempoDesc / 60);
     this.segundos = tiempoDesc % 60;
 
-    const idInterval = setInterval(() => {
+    this.idInterval = setInterval(() => {
       if (this.segundos === 0) {
         if (this.minutos !== 0) {
           this.minutos--;
           this.segundos = 60;
         } else {
-          clearInterval(idInterval);
+          clearInterval(this.idInterval);
         }
       } else {
         this.segundos--;

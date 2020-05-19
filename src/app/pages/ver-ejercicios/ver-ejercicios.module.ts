@@ -9,8 +9,8 @@ import { VerEjerciciosPageRoutingModule } from './ver-ejercicios-routing.module'
 import { VerEjerciciosPage } from './ver-ejercicios.page';
 import { FiltroEjerciciosPipe } from '../../pipes/filtro-ejercicios.pipe';
 import { PipesModule } from '../../pipes/pipes.module';
-import { VerEjercicioComponent } from '../../ver-ejercicio/ver-ejercicio.component';
-import { VerEjercicioComponentModule } from '../../ver-ejercicio/ver-ejercicio.module';
+import { VerEjercicioComponent } from '../../components/ver-ejercicio/ver-ejercicio.component';
+import { VerEjercicioComponentModule } from '../../components/ver-ejercicio/ver-ejercicio.module';
 import { EquipamientoPipe } from '../../pipes/equipamiento-pipe.pipe';
 
 @NgModule({

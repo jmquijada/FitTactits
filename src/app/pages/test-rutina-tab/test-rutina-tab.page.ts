@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { TestRutinaModalPage } from '../../test-rutina-modal/test-rutina-modal.page';
+import { TestRutinaModalPage } from 'src/app/components/test-rutina-modal/test-rutina-modal.page';
 
 @Component({
   selector: 'app-test-rutina-tab',

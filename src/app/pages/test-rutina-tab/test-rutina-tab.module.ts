@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { TestRutinaTabPageRoutingModule } from './test-rutina-tab-routing.module';
-
+import { TestRutinaModalPage } from 'src/app/components/test-rutina-modal/test-rutina-modal.page';
+import { TestRutinaModalPageModule } from 'src/app/components/test-rutina-modal/test-rutina-modal.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 import { TestRutinaTabPage } from './test-rutina-tab.page';
-import { TestRutinaModalPageModule } from '../../test-rutina-modal/test-rutina-modal.module';
-import { TestRutinaModalPage } from '../../test-rutina-modal/test-rutina-modal.page';
-import { ComponentsModule } from '../../components/components.module';
+
+
 
 @NgModule({
   entryComponents: [TestRutinaModalPage],

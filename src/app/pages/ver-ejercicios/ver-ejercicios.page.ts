@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FireDbService } from '../../services/fire-db.service';
-import { FiltroEjerciciosPipe } from '../../pipes/filtro-ejercicios.pipe';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
-import { VerEjercicioComponent } from '../../ver-ejercicio/ver-ejercicio.component';
-import { EquipamientoPipe } from '../../pipes/equipamiento-pipe.pipe';
+import { FireDbService } from 'src/app/services/fire-db.service';
+import { FiltroEjerciciosPipe } from 'src/app/pipes/filtro-ejercicios.pipe';
+import { EquipamientoPipe } from 'src/app/pipes/equipamiento-pipe.pipe';
+import { VerEjercicioComponent } from 'src/app/components/ver-ejercicio/ver-ejercicio.component';
 
 @Component({
   selector: 'app-ver-ejercicios',
@@ -57,9 +57,9 @@ export class VerEjerciciosPage implements OnInit {
   limiteSlice = 15;
 
   constructor(private serviceData: FireDbService,
-              private pipe: FiltroEjerciciosPipe,
-              private pipeMaterial: EquipamientoPipe,
-              private modalCtrl: ModalController) { }
+    private pipe: FiltroEjerciciosPipe,
+    private pipeMaterial: EquipamientoPipe,
+    private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.serviceData.getEjercicios().subscribe(

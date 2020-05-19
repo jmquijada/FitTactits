@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonRadioGroup } from '@ionic/angular';
-import { TestRutinaService } from '../services/test-rutina-service.service';
+import { TestRutinaService } from '../../services/test-rutina-service.service';
 
 @Component({
   selector: 'app-test-rutina-modal',
