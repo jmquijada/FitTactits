@@ -16,6 +16,12 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { CheckAuthGuardService } from './services/check-auth-guard.service';
+import { InicioAuthGuardService } from './services/inicio-auth-guard.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -29,7 +35,10 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
         PipesModule,
         IonicStorageModule.forRoot(),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        AngularFireDatabaseModule
     ],
     providers: [
         StatusBar,
@@ -38,6 +47,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
         Camera,
         File,
         WebView,
+        InicioAuthGuardService,
+        CheckAuthGuardService,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]

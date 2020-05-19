@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {CargarAlimentoService} from './services/cargar-alimento.service';
+import { CheckAuthGuardService } from './services/check-auth-guard.service';
+import { InicioAuthGuardService } from './services/inicio-auth-guard.service';
 
 const routes: Routes = [
   {
-    path: 'main',
-    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'principal'
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule)
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'inicio'
+    loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule),
+    canActivate: [InicioAuthGuardService]
   },
   {
     path: 'principal',
-    loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule)
+    loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule),
+    canActivate: [CheckAuthGuardService]
   },
   {
     path: 'general',
@@ -29,16 +29,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ver-ejercicios/ver-ejercicios.module').then( m => m.VerEjerciciosPageModule)
   },
   {
-    path: 'ver-rutinas',
-    loadChildren: () => import('./pages/ver-rutinas/ver-rutinas.module').then( m => m.VerRutinasPageModule)
-  },
-  {
-    path: 'crear-rutinas',
-    loadChildren: () => import('./pages/crear-rutinas/crear-rutinas.module').then( m => m.CrearRutinasPageModule)
+    path: 'rutinas-tabs',
+    loadChildren: () => import('./pages/rutinas-tabs/rutinas-tabs.module').then( m => m.RutinasTabsPageModule),
+    canActivate: [CheckAuthGuardService]
   },
   {
     path: 'info-user',
-    loadChildren: () => import('./pages/info-user/info-user.module').then( m => m.InfoUserPageModule)
+    loadChildren: () => import('./pages/info-user/info-user.module').then( m => m.InfoUserPageModule),
+    canActivate: [CheckAuthGuardService]
   },
   {
     path: 'amigos',
@@ -46,20 +44,30 @@ const routes: Routes = [
   },
   {
     path: 'estadisticas',
-    loadChildren: () => import('./pages/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
+    loadChildren: () => import('./pages/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule),
+    canActivate: [CheckAuthGuardService]
+  },
+  {
+    path: 'alimentos',
+    loadChildren: () => import('./pages/tab2/tab2.module').then( m => m.Tab2PageModule),
+    canActivate: [CheckAuthGuardService]
   },
   {
     path: 'alimento/:id',
     loadChildren: () => import('./pages/alimento/alimento.module').then( m => m.AlimentoPageModule), resolve: {
       alimento: CargarAlimentoService
-    }
-  },  {
+    },
+    canActivate: [CheckAuthGuardService]
+  },
+  {
     path: 'alimento-calc',
-    loadChildren: () => import('./pages/alimento-calc/alimento-calc.module').then( m => m.AlimentoCalcPageModule)
+    loadChildren: () => import('./pages/alimento-calc/alimento-calc.module').then( m => m.AlimentoCalcPageModule),
+    canActivate: [CheckAuthGuardService]
   },
   {
     path: 'alimento-fav',
-    loadChildren: () => import('./pages/alimento-fav/alimento-fav.module').then( m => m.AlimentoFavPageModule)
+    loadChildren: () => import('./pages/alimento-fav/alimento-fav.module').then( m => m.AlimentoFavPageModule),
+    canActivate: [CheckAuthGuardService]
   }
 
 ];

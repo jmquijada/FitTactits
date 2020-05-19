@@ -1,0 +1,33 @@
+<app-header titulo="Rutinas"></app-header>
+<ion-content>
+  <ion-segment [value]="modoRutinas" (ionChange)="cambioRutinas($event)">
+    <ion-segment-button value="general">
+      <ion-label>General</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="misrutinas">
+      <ion-label>Mis Rutinas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div *ngIf="(modoRutinas === 'general' && rutinas.length === 0) || (modoRutinas === 'misrutinas' && rutinasCreadas.length === 0)" class="noRutinasBox">
+    <div><ion-icon name="sad-outline"></ion-icon></div>
+    <span>No hay rutinas</span>
+  </div>
+  <ion-list *ngIf="modoRutinas === 'general'">
+    <ion-item *ngFor="let rutina of rutinas; let i = index">
+      <app-rutina-item (click)="presentAlertConfirm(i)" class="rutina-item-w100" [rutina]="rutina"></app-rutina-item>
+      <ion-chip (click)="infoRutina(rutina)" color="medium" slot="end">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Info</ion-label>
+      </ion-chip>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="modoRutinas === 'misrutinas'">
+    <ion-item *ngFor="let rutina of rutinasCreadas; let j = index" >
+      <app-rutina-item (click)="presentAlertConfirm(j)" class="rutina-item-w100" [rutina]="rutina"></app-rutina-item>
+      <ion-chip (click)="infoRutina(rutina)" color="medium" slot="end">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Info</ion-label>
+      </ion-chip>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{nombreRutina}} - {{diaObjeto.nombre}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <app-marcador
+    ion-card
+    [minutos]="rService.minutos"
+    [segundos]="rService.segundos"
+  ></app-marcador>
+  <ion-card *ngIf="diaObjeto">
+<div class="ion-text-center">
+  <img
+  class="ion-margin img-fluid"
+  [src]="diaObjeto.ejercicios[rService.ejercicio].imagen || '/assets/images/logo.png'"
+/>
+</div>
+    <ion-card-header color="dark">
+      <ion-card-title color="light" class="d-flex ion-justify-content-between">
+        <div>
+          {{diaObjeto.ejercicios[rService.ejercicio].nombre}}
+        </div>
+        <div>
+          <ion-buttons>
+            <ion-button
+              #nextEjercicio
+              *ngIf="!rService.finalizarRutina && !boolCircuito"
+              (click)="rService.cambiarEjercicio(this.diaObjeto, this.siguienteEjercicio)"
+              fill="solid"
+              color="medium"
+              >Siguiente</ion-button
+            >
+            <ion-button
+              #nextEjercicio
+              *ngIf="!rService.finalizarRutina && boolCircuito"
+              (click)="rService.cambiarEjercicioCircuito(this.diaObjeto, this.siguienteEjercicio)"
+              fill="solid"
+              color="medium"
+              >Siguiente</ion-button
+            >
+            <ion-button
+              (click)="rService.toastFinRutina()"
+              *ngIf="rService.finalizarRutina"
+              fill="solid"
+              color="success"
+              >Finalizar</ion-button
+            >
+          </ion-buttons>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-grid *ngIf="!rService.finalizarRutina">
+    <ion-row class="ion-text-center">
+      <ion-col>
+        Serie Actual
+      </ion-col>
+      <ion-col>
+        Series
+      </ion-col>
+      <ion-col>
+        Reps
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col>
+        {{rService.serie}}
+      </ion-col>
+      <ion-col>
+        {{diaObjeto.ejercicios[rService.ejercicio].series}}
+      </ion-col>
+      <ion-col>
+        {{diaObjeto.ejercicios[rService.ejercicio].repeticiones}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

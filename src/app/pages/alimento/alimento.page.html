@@ -1,14 +1,14 @@
 <ion-header class="ion-no-border">
     <ion-toolbar class="new-background-color" style="color: white;">
         <ion-buttons slot="start">
-            <ion-back-button defaultHref="/main/tabs/tab2"></ion-back-button>
+            <ion-back-button [defaultHref]="['/alimentos']"></ion-back-button>
         </ion-buttons>
         <ion-title>Alimentación</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-    <!--<img src="{{alimento.foto}}" alt="">-->
+    <!---->
 
     <ion-card>
         <ion-card-header>
@@ -22,7 +22,9 @@
 
             </ion-card-title>
         </ion-card-header>
-
+        <div class="ion-text-center">
+            <img [src]="alimento.foto" class="img-fluid margin-0">
+        </div>
         <ion-card-content>
             <table class="table">
                 <tbody>

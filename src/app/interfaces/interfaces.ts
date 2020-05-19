@@ -17,3 +17,31 @@ export interface IAlimento {
     sal: number;
     foto: string;
 }
+
+export interface IRutina {
+    id?: number;
+    nombre: string;
+    tipo: string;
+    sistema: string;
+    objetivo: string;
+    material: boolean;
+    numDias: number;
+    dias: IDias[];
+}
+
+export interface IDias {
+    id?: number;
+    nombre: string;
+    ejercicios: IEjercicio[];
+}
+
+export interface IEjercicio {
+    nombre: string;
+    musculo?: string;
+    equipamiento?: boolean;
+    descripcion?: string;
+    imagen: string;
+    series?: number;
+    repeticiones?: number;
+    descanso?: number;
+}

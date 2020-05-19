@@ -1,0 +1,6 @@
+<ion-list class="stylePop">
+  <ion-searchbar (ionChange)="valorBuscador = $event.detail.value" placeholder="Buscar..." [value]="valorBuscador"></ion-searchbar>
+  <ion-item *ngFor="let ejercicio of ejercicios | filtroSimpleEjercicio:valorBuscador;let i = index" (click)="addEjercicioC(posD,ejercicio)">
+    <ion-label class="ion-text-wrap">{{ejercicio.nombre}}</ion-label>
+  </ion-item>
+</ion-list>

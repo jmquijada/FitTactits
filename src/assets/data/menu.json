@@ -18,9 +18,9 @@
     "color": "primary"
   },
   {
-    "name": "Ejercicios",
+    "name": "Actividad Física",
     "icon": "gym-near.svg",
-    "redirectTo": "/main/tabs/tab3",
+    "redirectTo": "/rutinas-tabs",
     "color": "primary"
   },
   {

@@ -1,0 +1,95 @@
+<ion-list>
+  <form>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="7">
+        <ion-item>
+          <ion-label position="floating">Nombre de la Rutina </ion-label>
+          <ion-input #nombreRutina (ionChange)="setNombreRutina($event)" type="text" placeholder="Nombre..."></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col  size="5">
+        <ion-item>
+          <ion-label position="floating">Tipo de rutina</ion-label>
+          <ion-select #tipo
+          (ionChange)="setTipoRutina($event)"
+            [interfaceOptions]="{'header':'Tipo de Rutina'}"
+            placeholder="Seleccione uno..." value="Clasico"
+          >
+            <ion-select-option value="Clasico">Clasico</ion-select-option>
+            <ion-select-option value="Circuito">Circuito</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Sistema de rutina</ion-label>
+          <ion-select #sistema
+            (ionChange)="setSistemaRutina($event)"
+            placeholder="Seleccione uno..."
+          >
+            <ion-select-option *ngIf="crService.rutina.tipo === 'Clasico'" value="Full-Body">Full-Body</ion-select-option>
+            <ion-select-option *ngIf="crService.rutina.tipo === 'Clasico'" value="Torso Pierna">Torso Pierna</ion-select-option>
+            <ion-select-option *ngIf="crService.rutina.tipo === 'Clasico'" value="Tirón Empuje">Tirón Empuje</ion-select-option>
+            <ion-select-option *ngIf="crService.rutina.tipo === 'Clasico'" value="Weider">Weider</ion-select-option>
+            <ion-select-option *ngIf="crService.rutina.tipo === 'Clasico'" value="Tirón Empuje Pierna">Tirón Empuje Pierna</ion-select-option>
+            <ion-select-option *ngIf="crService.rutina.tipo === 'Circuito'" value="Circuito HIIT">Circuito HIIT</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Objetivo</ion-label>
+          <ion-select #objetivo
+          (ionChange)="setObjetivo($event)"
+          placeholder="Seleccione uno..."
+        >
+          <ion-select-option >Fuerza</ion-select-option>
+          <ion-select-option >Ganar masa</ion-select-option>
+          <ion-select-option >Perder Grasa</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Nº de días (1-7)</ion-label>
+          <ion-input #numDias (ionChange)="setNumDias($event)" type="number" min="1" max="7" placeholder="Nº de días..." [value]="crService.rutina.numDias"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="dark" *ngFor="let dia of crService.diasArray | slice:0:crService.rutina.numDias; let i = index">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-input #nombreDia type="text" [value]="dia.nombre"></ion-input>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-no-padding" style="background-color: white !important;">
+            <ion-item *ngFor="let ejercicio of dia.ejercicios; let indexEj = index">
+              <ion-label>{{ejercicio.nombre}} ({{ejercicio.series}}x{{ejercicio.repeticiones}}) ({{ejercicio.descanso}} Seg)</ion-label>
+              <ion-button (click)="crService.delEjercicio(i,indexEj)" color="danger">
+                <ion-icon name="close-circle"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <div class="ion-text-center">
+              <ion-button class="ion-margin" (click)="buscarEjercicios(i)" color="medium">Añadir Ejercicio</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="crService.prepararObjetoRutina(rutinas.length, rutinas);resetForm()" color="primary" expand="full">
+          Guardar Rutina
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </form>
+</ion-list>

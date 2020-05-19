@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ejercicio.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-badge class="ion-float-right ion-padding ion-margin" [color]="(ejercicio.equipamiento)?'danger':'success'">Material</ion-badge>
+    <ion-img class="img-fluid ion-margin" [src]="ejercicio.imagen"></ion-img>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <strong>Músculo principal: </strong>{{ejercicio.musculo}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Necesita material: </strong>{{(ejercicio.equipamiento)?'Sí':'No'}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap"><strong>Técnica: </strong>{{ejercicio.descripcion}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

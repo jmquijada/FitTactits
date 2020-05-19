@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Test en Proceso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <h4>{{testService.preguntas[indexPregunta].pregunta}}</h4>
+    </ion-list-header>
+    <ion-radio-group>
+      <ion-item *ngFor="let respuesta of testService.preguntas[indexPregunta].respuestas; let i = index" (click)="setRespuesta(i)">
+        <ion-label>{{respuesta.texto}}</ion-label>
+        <ion-radio slot="start" [value]="i"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-button *ngIf="!terminarTest" (click)="siguientePregunta()" class="ion-margin" color="primary">Siguiente</ion-button>
+  <ion-button *ngIf="terminarTest" (click)="evaluarTest()" class="ion-margin" color="success">Enviar Respuestas</ion-button>
+</ion-content>

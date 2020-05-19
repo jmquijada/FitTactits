@@ -1,12 +1,86 @@
 <ion-header>
-  <ion-toolbar class="new-background-color" style="color: white;">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/main/tabs/tab3"></ion-back-button>
+      <ion-menu-button menu="first"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Ver Ejercicios</ion-title>
+    <ion-title>Ejercicios</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarOcultarBuscador()">
+        <ion-icon [name]="iconoSearch"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar
+    *ngIf="verBuscador"
+    animated
+    showCancelButton="never"
+    placeholder="Buscar ejercicio..."
+    (ionChange)="buscador = $event.detail.value"
+    [value]="buscador"
+    [debounce]="250"
+    showCancelButton="250"
+  ></ion-searchbar>
 
+  <ion-segment
+    *ngIf="verBuscador"
+    mode="ios"
+    [value]="material"
+    (ionChange)="cambiarMaterial($event)"
+  >
+    <ion-segment-button
+      *ngFor="let mate of equipamientoSegment"
+      [value]="mate.valor"
+    >
+      <ion-label>{{mate.texto}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment
+    [value]="valorSegment"
+    scrollable
+    (ionChange)="cambiarMusculo($event)"
+  >
+    <ion-segment-button
+      *ngFor="let musculo of musculosSegment"
+      [value]="musculo"
+    >
+      <ion-label>{{musculo}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <ion-item
+      detail
+      *ngFor="let ejercicio of ejercicios | filtroEjercicios:buscador:valorSegment | equipamientoPipe: material | slice:0:limiteSlice"
+      (click)="verEjercicio(ejercicio)"
+    >
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>{{ejercicio.nombre}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-badge [color]="(ejercicio.equipamiento)?'danger':'success'"
+              >Material</ion-badge
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll
+    threshold="100px"
+    (ionInfinite)="cargarMasEjercicios($event)"
+  >
+    <ion-infinite-scroll-content
+      loadingSpinner="circles"
+      loadingText="Cargando Ejercicios..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

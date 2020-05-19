@@ -1,0 +1,14 @@
+<app-header titulo="Crear Rutinas"></app-header>
+
+<ion-content>
+  <ion-segment value="simple" (ionChange)="cambioModo($event)">
+    <ion-segment-button value="simple">
+      <ion-label>Simple</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="completo">
+      <ion-label>Completo</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <app-crear-rutina-simple *ngIf="modoSeleccionado ==='simple'" [rutinas]="rutinasCreadas"></app-crear-rutina-simple>
+  <app-crear-rutina-completo *ngIf="modoSeleccionado ==='completo'" [rutinas]="rutinasCreadas"></app-crear-rutina-completo>
+</ion-content>

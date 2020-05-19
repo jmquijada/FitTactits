@@ -7,14 +7,23 @@ import { IonicModule } from '@ionic/angular';
 import { VerEjerciciosPageRoutingModule } from './ver-ejercicios-routing.module';
 
 import { VerEjerciciosPage } from './ver-ejercicios.page';
+import { FiltroEjerciciosPipe } from '../../pipes/filtro-ejercicios.pipe';
+import { PipesModule } from '../../pipes/pipes.module';
+import { VerEjercicioComponent } from '../../ver-ejercicio/ver-ejercicio.component';
+import { VerEjercicioComponentModule } from '../../ver-ejercicio/ver-ejercicio.module';
+import { EquipamientoPipe } from '../../pipes/equipamiento-pipe.pipe';
 
 @NgModule({
+  entryComponents: [VerEjercicioComponent],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VerEjerciciosPageRoutingModule
+    VerEjerciciosPageRoutingModule,
+    PipesModule,
+    VerEjercicioComponentModule
   ],
-  declarations: [VerEjerciciosPage]
+  declarations: [VerEjerciciosPage],
+  providers: [FiltroEjerciciosPipe, EquipamientoPipe]
 })
 export class VerEjerciciosPageModule {}
