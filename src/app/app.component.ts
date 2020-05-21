@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +16,25 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public auth: AuthService
+    public fbAuth: AuthService,
+    private router: Router
   ) {
-    this.initializeApp();
+    this.fbAuth.auth.authState.subscribe(
+      user => {
+        if (user) {
+          this.fbAuth.authUser = user;
+          this.router.navigate(['/principal']);
+        }
+      }
+    );
+    this.platform.ready().then(() => {
+      this.initializeApp();
+    });
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
       this.splashScreen.hide();
 
       // this.checkDarkTheme();

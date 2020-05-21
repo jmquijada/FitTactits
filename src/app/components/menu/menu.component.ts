@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../services/data.service';
 import {Observable} from 'rxjs';
 import {Interfaces} from '../../interfaces/interfaces';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-menu',
@@ -12,8 +14,8 @@ export class MenuComponent implements OnInit {
 
     opciones: Observable<Interfaces[]>;
     darkMode = true;
-
-    constructor(private dataService: DataService) {
+    
+    constructor(private dataService: DataService, public fbAuth: AuthService, public router: Router) {
         // variables que comprueba si el modo oscuro está habilitado o no
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
         this.darkMode = prefersDark.matches;

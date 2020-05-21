@@ -11,7 +11,7 @@
         </div>
         <ion-list lines="none">
             <ion-list-header>
-                Principal
+                General
             </ion-list-header>
             <ion-menu-toggle *ngFor="let o of opciones | async">
                 <ion-item [routerLink]="o.redirectTo">
@@ -20,31 +20,29 @@
                 </ion-item>
             </ion-menu-toggle>
         </ion-list>
-        <ion-list *ngIf="loggedIn" lines="none">
+        <ion-list *ngIf="fbAuth.authUser" lines="none">
             <ion-list-header>
-                Cuenta
+                Otros
             </ion-list-header>
+            <ion-item>
+                <ion-icon slot="start" name="moon"></ion-icon>
+                <ion-label>Modo Oscuro</ion-label>
+                <ion-toggle slot="end"
+                            [ngModel]="darkMode"
+                            (ionChange)="cambio()"></ion-toggle>
+            </ion-item>
 
             <ion-menu-toggle autoHide="false">
-                <ion-item routerLink="/account" routerLinkActive="active" routerDirection="root" detail="false">
-                    <ion-icon slot="start" name="person"></ion-icon>
+                <ion-item routerLink="/acerca-de" routerLinkActive="active" routerDirection="root" detail="false">
+                    <ion-icon slot="start" name="information-circle-outline"></ion-icon>
                     <ion-label>
-                        Cuenta
+                        Acerca de
                     </ion-label>
                 </ion-item>
             </ion-menu-toggle>
 
             <ion-menu-toggle autoHide="false">
-                <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
-                    <ion-icon slot="start" name="help"></ion-icon>
-                    <ion-label>
-                        Soporte
-                    </ion-label>
-                </ion-item>
-            </ion-menu-toggle>
-
-            <ion-menu-toggle autoHide="false">
-                <ion-item button (click)="logout()" detail="false">
+                <ion-item (click)="fbAuth.logout();" detail="false">
                     <ion-icon slot="start" name="log-out"></ion-icon>
                     <ion-label>
                         Cerrar Sesión
@@ -52,47 +50,6 @@
                 </ion-item>
             </ion-menu-toggle>
 
-        </ion-list>
-
-        <ion-list lines="none">
-            <ion-list-header>
-                Cuenta
-            </ion-list-header>
-
-            <ion-menu-toggle autoHide="false">
-                <ion-item routerLink="/login" routerLinkActive="active" routerDirection="root" detail="false">
-                    <ion-icon slot="start" name="log-in"></ion-icon>
-                    <ion-label>
-                        Iniciar Sesión ?
-                    </ion-label>
-                </ion-item>
-            </ion-menu-toggle>
-
-            <ion-menu-toggle autoHide="false">
-                <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
-                    <ion-icon slot="start" name="help"></ion-icon>
-                    <ion-label>
-                        Soporte ?
-                    </ion-label>
-                </ion-item>
-            </ion-menu-toggle>
-
-            <ion-menu-toggle autoHide="false">
-                <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">
-                    <ion-icon slot="start" name="person-add"></ion-icon>
-                    <ion-label>
-                        Registrarse ?
-                    </ion-label>
-                </ion-item>
-            </ion-menu-toggle>
-
-            <ion-item>
-                <ion-icon slot="start" name="moon"></ion-icon>
-                <ion-label>Modo Oscuro ?</ion-label>
-                <ion-toggle slot="end"
-                            [ngModel]="darkMode"
-                            (ionChange)="cambio()"></ion-toggle>
-            </ion-item>
         </ion-list>
     </ion-content>
 </ion-menu>

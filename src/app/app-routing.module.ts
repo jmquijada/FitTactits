@@ -2,18 +2,17 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {CargarAlimentoService} from './services/cargar-alimento.service';
 import { CheckAuthGuardService } from './services/check-auth-guard.service';
-import { InicioAuthGuardService } from './services/inicio-auth-guard.service';
+import { AcercaDePageModule } from './pages/acerca-de/acerca-de.module';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'principal'
+    redirectTo: '/inicio'
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule),
-    canActivate: [InicioAuthGuardService]
+    loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule)
   },
   {
     path: 'principal',
@@ -26,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'ver-ejercicios',
-    loadChildren: () => import('./pages/ver-ejercicios/ver-ejercicios.module').then( m => m.VerEjerciciosPageModule)
+    loadChildren: () => import('./pages/ver-ejercicios/ver-ejercicios.module').then( m => m.VerEjerciciosPageModule),
+    canActivate: [CheckAuthGuardService]
   },
   {
     path: 'rutinas-tabs',
@@ -34,22 +34,8 @@ const routes: Routes = [
     canActivate: [CheckAuthGuardService]
   },
   {
-    path: 'info-user',
-    loadChildren: () => import('./pages/info-user/info-user.module').then( m => m.InfoUserPageModule),
-    canActivate: [CheckAuthGuardService]
-  },
-  {
-    path: 'amigos',
-    loadChildren: () => import('./pages/amigos/amigos.module').then( m => m.AmigosPageModule)
-  },
-  {
-    path: 'estadisticas',
-    loadChildren: () => import('./pages/estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule),
-    canActivate: [CheckAuthGuardService]
-  },
-  {
     path: 'alimentos',
-    loadChildren: () => import('./pages/tab2/tab2.module').then( m => m.Tab2PageModule),
+    loadChildren: () => import('./pages/alimentos/alimentos.module').then( m => m.AlimentosPageModule),
     canActivate: [CheckAuthGuardService]
   },
   {
@@ -68,9 +54,28 @@ const routes: Routes = [
     path: 'alimento-fav',
     loadChildren: () => import('./pages/alimento-fav/alimento-fav.module').then( m => m.AlimentoFavPageModule),
     canActivate: [CheckAuthGuardService]
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [CheckAuthGuardService]
+  },
+  {
+    path: 'acerca-de',
+    loadChildren: () => import('./pages/acerca-de/acerca-de.module').then( m => m.AcercaDePageModule)
+  },
+  {
+    path: 'progreso',
+    loadChildren: () => import('./pages/progreso/progreso.module').then( m => m.ProgresoPageModule)
+  },
+  {
+    path: 'progreso-tabs',
+    loadChildren: () => import('./pages/progreso-tabs/progreso-tabs.module').then( m => m.ProgresoTabsPageModule),
+    canActivate: [CheckAuthGuardService]
   }
 
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

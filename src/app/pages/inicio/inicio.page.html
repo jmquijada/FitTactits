@@ -3,11 +3,12 @@
     <ion-slide>
       <div class="banner">
         <h1>FIT TACTICS</h1>
-        <img src="assets/inicio-2.jpg" alt="" />
+        <img src="assets/inicio-2.jpg" alt=""/>
       </div>
       <div class="content2">
         <h2>Tu aplicación de entrenamiento</h2>
         <h2>Ponte en forma con nosotros</h2>
+        <ion-icon class="icon-next" color="primary" name="arrow-forward-circle-outline"></ion-icon>
       </div>
     </ion-slide>
 
@@ -20,6 +21,7 @@
         <h2>
           Información nutricional sobre una gran variedad de comidas y alimentos
         </h2>
+        <ion-icon class="icon-next" color="primary" name="arrow-forward-circle-outline"></ion-icon>
       </div>
     </ion-slide>
 
@@ -30,6 +32,7 @@
       </div>
       <div class="content2">
         <h2>Personaliza tus entrenamientos y rutinas</h2>
+        <ion-icon class="icon-next" color="primary" name="arrow-forward-circle-outline"></ion-icon>
       </div>
     </ion-slide>
 
@@ -57,21 +60,10 @@
                   <ul class="uk-switcher uk-margin">
                     <li>
                       <div class="login-form">
-                        <form>
+                        <form (submit)="registerForm()">
                           <div class="form-group">
                             <div class="input-group">
-                              <ion-input
-                                type="text"
-                                class="form-control"
-                                name="username"
-                                placeholder="Usuario"
-                                required="required"
-                              ></ion-input>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="input-group">
-                              <ion-input
+                              <ion-input #email (ionChange)="fbAuth.email = $event.detail.value"
                                 type="email"
                                 class="form-control"
                                 name="email"
@@ -82,7 +74,7 @@
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <ion-input
+                              <ion-input #pass (ionChange)="fbAuth.password = $event.detail.value"
                                 type="password"
                                 class="form-control"
                                 name="password"
@@ -93,7 +85,7 @@
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <ion-input
+                              <ion-input #rPass (ionChange)="repeatPass = $event.detail.value"
                                 type="password"
                                 class="form-control"
                                 name="password"
@@ -116,30 +108,27 @@
 
                     <li>
                       <div class="login-form">
-                        <form>
                           <div class="text-center social-btn">
-                            <a href="#" class="btn btn-info btn-block"
-                              ><i class="fab fa-twitter-square"></i> Login con
-                              <b>Twitter</b></a
-                            >
                             <button (click)="fbAuth.glogin()" class="btn btn-danger">
                               <i class="fab fa-google"></i> Login con Google</button>
                           </div>
                           <div class="or-seperator"><i>o</i></div>
+
+                          <form (submit)="loginForm()">
                           <div class="form-group">
                             <div class="input-group">
-                              <ion-input
-                                type="text"
+                              <ion-input (ionChange)="fbAuth.email = $event.detail.value"
+                                type="email"
                                 class="form-control"
-                                name="username"
-                                placeholder="Usuario"
+                                name="email"
+                                placeholder="Email"
                                 required="required"
                               ></ion-input>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <ion-input
+                              <ion-input (ionChange)="fbAuth.password = $event.detail.value"
                                 type="password"
                                 class="form-control"
                                 name="password"

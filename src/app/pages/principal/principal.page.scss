@@ -1,9 +1,11 @@
-
 .ppal {
-  font-size: 3em;
+  font-size: 3.5em;
   color: #2dd36f;
 }
 
+.ppal h2{
+  font-size: 22px;
+}
 .pos {
   position: relative;
   text-align: center;
@@ -169,8 +171,7 @@ svg circle:nth-child(2){
 }
 
 .card:nth-child(1) svg circle:nth-child(2){
-  stroke-dashoffset: calc(440 - (440 * 1000) / 10000);
-  stroke: #00ff43;
+  stroke: #c4302b;
 }
 
 .container .card {
@@ -239,4 +240,8 @@ svg circle:nth-child(2){
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: 0.5s;
+}
+
+.text-white{
+  color: white;
 }

@@ -71,7 +71,7 @@
           </ion-card-header>
           <ion-card-content class="ion-no-padding" style="background-color: white !important;">
             <ion-item *ngFor="let ejercicio of dia.ejercicios; let indexEj = index">
-              <ion-label>{{ejercicio.nombre}} ({{ejercicio.series}}x{{ejercicio.repeticiones}}) ({{ejercicio.descanso}} Seg)</ion-label>
+              <ion-label class="ion-text-wrap">{{ejercicio.nombre}} ({{ejercicio.series}}x{{ejercicio.repeticiones}}) ({{ejercicio.descanso}} Seg)</ion-label>
               <ion-button (click)="crService.delEjercicio(i,indexEj)" color="danger">
                 <ion-icon name="close-circle"></ion-icon>
               </ion-button>

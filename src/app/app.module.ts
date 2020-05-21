@@ -21,7 +21,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { CheckAuthGuardService } from './services/check-auth-guard.service';
-import { InicioAuthGuardService } from './services/inicio-auth-guard.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import {Pedometer} from "@ionic-native/pedometer/ngx";
 
 @NgModule({
     declarations: [AppComponent],
@@ -38,7 +39,8 @@ import { InicioAuthGuardService } from './services/inicio-auth-guard.service';
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
-        AngularFireDatabaseModule
+        AngularFireDatabaseModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
     providers: [
         StatusBar,
@@ -47,7 +49,7 @@ import { InicioAuthGuardService } from './services/inicio-auth-guard.service';
         Camera,
         File,
         WebView,
-        InicioAuthGuardService,
+        Pedometer,
         CheckAuthGuardService,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],

@@ -1,8 +1,10 @@
-import {ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
-import {Platform} from '@ionic/angular';
-import {DataLocalService} from '../../services/data-local.service';
-
-
+import { ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { DataLocalService } from '../../services/data-local.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { FireDbService } from '../../services/fire-db.service';
+import {Pedometer} from '@ionic-native/pedometer/ngx';
 
 
 @Component({
@@ -12,7 +14,7 @@ import {DataLocalService} from '../../services/data-local.service';
 })
 export class PrincipalPage implements OnInit {
 
-// Valores
+    // Valores
     /*
     idInterval;
     distance = 0;
@@ -37,30 +39,40 @@ export class PrincipalPage implements OnInit {
     constructor(private plt: Platform,
                 private ngzone: NgZone,
                 public refdect: ChangeDetectorRef,
-                private dataService: DataLocalService) {
+                private pedo: Pedometer,
+                private dataService: DataLocalService,
+                private fbAuth: AuthService,
+                private db: FireDbService) {
         // this.watchSteps();
-
     }
 
     ngOnInit() {
-
-    }
-/*
-Cambió el plugin del pedómetro y se torcieron las tornas
-    watchSteps() {
-        this.pedo.startPedometerUpdates()
-            .subscribe((data: IPedometerData) => {
-
-                this.stepCount = data.numberOfSteps;
-                this.dataService.guardarPasos(this.stepCount);
-                // this.startDate = new Date(this.PedometerData.startDate);
-                // this.endDate = new Date(this.PedometerData.endDate);
-                if (this.stepCount == 100) {
-                    alert('Yes! Your have completed 100 steps');
+        this.db.getUser(this.fbAuth.authUser.uid).subscribe(
+            snap => {
+                const u: any = snap.payload.val();
+                if (u) {
+                    this.stepCount = u.pasos;
                 }
-                this.refdect.detectChanges();
-            });
-
+            }
+        );
     }
-*/
+
+    /*
+    Cambió el plugin del pedómetro y se torcieron las tornas
+        watchSteps() {
+            this.pedo.startPedometerUpdates()
+                .subscribe((data: IPedometerData) => {
+
+                    this.stepCount = data.numberOfSteps;
+                    this.dataService.guardarPasos(this.stepCount);
+                    // this.startDate = new Date(this.PedometerData.startDate);
+                    // this.endDate = new Date(this.PedometerData.endDate);
+                    if (this.stepCount == 100) {
+                        alert('Yes! Your have completed 100 steps');
+                    }
+                    this.refdect.detectChanges();
+                });
+
+        }
+    */
 }

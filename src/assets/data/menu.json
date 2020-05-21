@@ -1,6 +1,6 @@
 [
   {
-    "name": "Resumen",
+    "name": "Inicio",
     "icon": "casa.svg",
     "redirectTo": "/principal",
     "color": "primary"
@@ -8,13 +8,13 @@
   {
     "name": "Perfil",
     "icon": "people-circle-outline.svg",
-    "redirectTo": "/main/tabs/tab1",
+    "redirectTo": "/perfil",
     "color": "primary"
   },
   {
     "name": "Alimentación",
     "icon": "food.svg",
-    "redirectTo": "/main/tabs/tab2",
+    "redirectTo": "/alimentos",
     "color": "primary"
   },
   {
@@ -26,7 +26,7 @@
   {
     "name": "Progreso",
     "icon": "progress.svg",
-    "redirectTo": "/main/tabs/tab4",
+    "redirectTo": "/progreso-tabs",
     "color": "primary"
   }
 ]

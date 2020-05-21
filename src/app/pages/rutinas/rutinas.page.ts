@@ -3,6 +3,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { IRutina, IDias } from '../../interfaces/interfaces';
 import { FireDbService } from '../../services/fire-db.service';
 import { VisualizarRutinaPage } from '../../components/visualizar-rutina/visualizar-rutina.page';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-rutinas',
@@ -18,10 +19,11 @@ export class RutinasPage implements OnInit {
 
   constructor(private alertCtrl: AlertController,
     private modalCtrl: ModalController,
-    private fireService: FireDbService) { }
+    private fireService: FireDbService,
+    private fbAuth: AuthService) { }
 
   ngOnInit() {
-    this.fireService.getRutinasCreadas().subscribe(
+    this.fireService.getRutinasCreadas(this.fbAuth.authUser.uid).subscribe(
       (snap) => {
         this.rutinasCreadas = [];
         snap.forEach((r) => {

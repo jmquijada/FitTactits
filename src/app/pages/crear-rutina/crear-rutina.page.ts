@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IRutina } from '../../interfaces/interfaces';
 import { CrearRutinaService } from '../../services/crear-rutina.service';
 import { FireDbService } from '../../services/fire-db.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-crear-rutina',
@@ -13,10 +14,10 @@ export class CrearRutinaPage implements OnInit {
   modoSeleccionado = 'simple';
   rutinasCreadas: IRutina[];
 
-  constructor(private crService: CrearRutinaService, private db: FireDbService) { }
+  constructor(private crService: CrearRutinaService, private db: FireDbService, private fbAuth: AuthService) { }
 
   ngOnInit() {
-    this.db.getRutinasCreadas().subscribe(snap => {
+    this.db.getRutinasCreadas(this.fbAuth.authUser.uid).subscribe(snap => {
       this.rutinasCreadas = [];
       snap.forEach((r) => {
         let rutina: any = r.payload.val();

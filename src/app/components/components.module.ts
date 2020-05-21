@@ -11,6 +11,7 @@ import { MarcadorComponent } from './marcador/marcador.component';
 import { CrearRutinaCompletoComponent } from './crear-rutina-completo/crear-rutina-completo.component';
 import { PopEjerciciosComponent } from './pop-ejercicios/pop-ejercicios.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { GraficaPasosComponent } from './grafica-pasos/grafica-pasos.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PipesModule } from '../pipes/pipes.module';
         CrearRutinaSimpleComponent,
         MarcadorComponent,
         CrearRutinaCompletoComponent,
-        PopEjerciciosComponent
+        PopEjerciciosComponent,
+        GraficaPasosComponent
     ],
     exports: [
         MenuComponent,
@@ -30,7 +32,8 @@ import { PipesModule } from '../pipes/pipes.module';
         CrearRutinaSimpleComponent,
         MarcadorComponent,
         CrearRutinaCompletoComponent,
-        PopEjerciciosComponent
+        PopEjerciciosComponent,
+        GraficaPasosComponent
     ],
     imports: [
         CommonModule,

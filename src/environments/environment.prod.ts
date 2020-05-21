@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig : {
-    apiKey: 'AIzaSyCG4-lj-1l-X7Kg5iT-z672O2GonGDv1Ro',
-    authDomain: 'fittactics-4b774.firebaseapp.com',
-    databaseURL: 'https://fittactics-4b774.firebaseio.com',
-    projectId: 'fittactics-4b774',
-    storageBucket: 'fittactics-4b774.appspot.com',
-    messagingSenderId: '60362060717',
-    appId: '1:60362060717:web:30362966a901d8b777e724'
+    apiKey: 'AIzaSyC-U1EEdYgc4VnyHNvrzlcMDsWLyUnM9Gc',
+    authDomain: 'fittactics2.firebaseapp.com',
+    databaseURL: 'https://fittactics2.firebaseio.com',
+    projectId: 'fittactics2',
+    storageBucket: 'fittactics2.appspot.com',
+    messagingSenderId: '514092376901',
+    appId: '1:514092376901:web:47516e718b698cc05e142c'
   }
 };

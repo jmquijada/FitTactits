@@ -11,10 +11,11 @@ export class InicioAuthGuardService implements CanActivate {
   constructor(private fbAuth: AuthService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    /* 
     if (this.fbAuth.authUser !== null) {
       this.router.navigate(['/principal']);
-      return false;
-    }
+      return true;
+    }*/
     return true;
   }
 }

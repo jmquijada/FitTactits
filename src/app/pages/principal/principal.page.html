@@ -2,83 +2,82 @@
 
 <ion-content>
 
-  <ion-grid class="ion-margin-top">
+    <ion-grid class="ion-margin-top">
 
-    <ion-slides [options]="opciones" class="pos">
-      <ion-slide class="slide">
-        <img class="borde" src="assets/slides-principal/slide-1.jpg" alt=""/>
-        <p class="bottom-left">Entrenamientos Personalizados</p>
-      </ion-slide>
+        <ion-slides [options]="opciones" class="pos">
+            <ion-slide class="slide" [routerLink]="['/rutinas-tabs/crear-rutina']">
+                <img class="borde" src="assets/slides-principal/slide-1.jpg" alt=""/>
+                <p class="bottom-left">Entrenamientos Personalizados</p>
+            </ion-slide>
 
-      <ion-slide class="slide">
-        <img class="borde" src="assets/slides-principal/slide-2.jpg" alt=""/>
-        <p class="bottom-left">Multitud de Ejercicios</p>
-      </ion-slide>
+            <ion-slide class="slide" [routerLink]="['/rutinas-tabs/ejercicios']">
+                <img class="borde" src="assets/slides-principal/slide-2.jpg" alt=""/>
+                <p class="bottom-left">Multitud de Ejercicios</p>
+            </ion-slide>
 
-      <ion-slide class="slide">
-        <img class="borde" src="assets/slides-principal/slide-3.jpg" alt=""/>
-        <p class="bottom-right bottom-left">Información Nutricional</p>
-      </ion-slide>
-    </ion-slides>
+            <ion-slide class="slide" [routerLink]="['/alimentos']">
+                <img class="borde" src="assets/slides-principal/slide-3.jpg" alt=""/>
+                <p class="bottom-right bottom-left">Información Nutricional</p>
+            </ion-slide>
+        </ion-slides>
 
-  </ion-grid>
+    </ion-grid>
 
-  <ion-grid>
-    <h2 class="info ion-text-center uk-text-danger">En la página principal que ponemos ??</h2>
-    <div class="container">
-      <div class="card">
-        <div class="box">
-          <div class="percent">
-            <svg>
-              <circle cx="70" cy="70" r="70"></circle>
-              <circle cx="70" cy="70" r="70"></circle>
-            </svg>
-            <div class="number">
-              <h2 class="ion-text-center">{{stepCount}}</h2>
+    <ion-grid>
+        <div class="container">
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"
+                                    [ngStyle]="{'stroke-dashoffset': 'calc(440 - (440 * ' + stepCount + ')/10000' }"></circle>
+                        </svg>
+                        <div class="number">
+                            <h2 class="ion-text-center">{{stepCount}}</h2>
+                        </div>
+                    </div>
+                    <h2 class="text ion-text-center">Pasos</h2>
+                </div>
             </div>
-          </div>
-          <h2 class="text ion-text-center">Pasos</h2>
         </div>
-      </div>
-    </div>
 
-    <ion-row>
-      <ion-col size="6">
-        <ion-card class="ppal ion-text-center ion-padding" color="light">
-          <ion-icon name="fitness-outline"></ion-icon>
-          <h2>Resumen</h2>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card class="ppal ion-text-center ion-padding" color="light" [routerLink]="['/rutinas-tabs/rutinas']">
-          <ion-icon name="barbell-outline"></ion-icon>
-          <h2>Rutinas</h2>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+        <ion-row>
+            <ion-col size="6">
+                <ion-card class="ppal ion-text-center ion-padding" color="light" [routerLink]="['/progreso-tabs']">
+                    <ion-icon name="analytics-outline"></ion-icon>
+                    <h2>Progreso</h2>
+                </ion-card>
+            </ion-col>
+            <ion-col size="6">
+                <ion-card class="ppal ion-text-center ion-padding" color="light"
+                          [routerLink]="['/rutinas-tabs/rutinas']">
+                    <ion-icon name="barbell-outline"></ion-icon>
+                    <h2>Rutinas</h2>
+                </ion-card>
+            </ion-col>
+        </ion-row>
 
-    <ion-row>
+        <ion-row>
 
-      <section id="container">
-        <ul id="listlink">
-          <li>
-            <div></div>
-            <span class="titles"><i class="fas fa-poll"></i>Resumen</span><span class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
-          </li>
-          <li [routerLink]="['/rutinas-tabs/ejercicios']">
-            <div></div>
-            <span class="titles"><i><ion-icon name="barbell-outline"></ion-icon></i>Ejercicios</span><span class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
-          </li>
-          <li [routerLink]="['/alimentos']">
-            <div></div>
-            <span class="titles"><i><ion-icon src="assets/food.svg"></ion-icon></i>Alimentación</span><span class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
-          </li>
-        </ul>
-      </section>
+            <section id="container">
+                <ul id="listlink">
+                    <li [routerLink]="['/rutinas-tabs/ejercicios']">
+                        <div></div>
+                        <span class="titles"><i><ion-icon name="barbell-outline"></ion-icon></i>Ejercicios</span><span
+                            class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                    </li>
+                    <li [routerLink]="['/alimentos']">
+                        <div></div>
+                        <span class="titles"><i><ion-icon src="assets/food.svg"></ion-icon></i>Alimentación</span><span
+                            class="offdata"><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                    </li>
+                </ul>
+            </section>
 
-    </ion-row>
+        </ion-row>
 
 
-  </ion-grid>
+    </ion-grid>
 
 </ion-content>

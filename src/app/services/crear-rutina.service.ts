@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { IRutina, IDias, IEjercicio } from '../interfaces/interfaces';
 import { AlertController, PopoverController } from '@ionic/angular';
 import { FireDbService } from './fire-db.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +56,7 @@ export class CrearRutinaService {
   seriesCircuito;
   descansoCircuito;
 
-  constructor(private alertCtrl: AlertController, private fireService: FireDbService) { }
+  constructor(private alertCtrl: AlertController, private fireService: FireDbService, private fbAuth: AuthService) { }
 
   // Alert para coger el valor de vueltas y descanso en el caso de que el usuario seleccione 'Circuito' como tipo de rutina
   async alertCircuito() {
@@ -229,7 +230,7 @@ export class CrearRutinaService {
     }
 
     console.log(this.rutina);
-    this.fireService.setRutinaCreada(this.rutina, id);
+    this.fireService.setRutinaCreada(this.fbAuth.authUser.uid, this.rutina, id);
     this.alertMsg('Información', 'Rutina creada con éxito', this.resetDatos());
 
   }
